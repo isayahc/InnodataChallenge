@@ -1,0 +1,55 @@
+{
+  "id": "gen-1794687369-OfGtZPL9yoD9CI7HbJcB",
+  "object": "chat.completion",
+  "created": 1794687369,
+  "model": "anthropic/claude-opus-5.5",
+  "provider": "Claude Platform on AWS",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "end_turn",
+      "message": {
+        "role": "assistant",
+        "content": "[{\"id\":\"R3_R2_door\",\"answer\":\"yes\"}]",
+        "refusal": null,
+        "reasoning": "I'm checking the wall between R2 and R3 at y=770, and it has a door opening running from x=1125 to 1215.\n\n",
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "text": "I'm checking the wall between R2 and R3 at y=770, and it has a door opening running from x=1125 to 1215.\n\n",
+            "format": "anthropic-claude-v1",
+            "index": 0,
+            "signature": "CAQStAUKEAgTGAI4AUIIdGhpbmtpbmcSDFwuzcXWGkEEAyTtkxoMPzgkGeca+B/aS4dYIjDEGKkO9V8fZ5zzyRDykjqQOLFdYRF7MHiCFVqJk0ZTsa0Q5X4bQcUBdKeYumu4Lpwq0QT6sxpqG/fhA6/2ThC1mGsjnrYuRZS4mwHkFfRoWZ60SkhPfF1hCo9/1BAOZLBYqsZZ0WeGgd9RqSCebr/9lN1tY8J6faZ1bBoQTGt+xD59zL9YROsHsyhxYkw1ru0/DvbSV2UPCpazVn+O8uwyUUfUfEXG2t1X7pppa7ltOqpzHCSC3ux2lQVcF5xZu0ma/9MvA3TV1+9lacoUfvWxh0o/22lQte34J/AI5whHEwFD8SCLy8eWLslN5bUINWh5gJ+T8AjVnESQY1d3mgq0sAOQ8kj6ANJBHeOYXxUWGPPVsgOZy8H70Kx0knkX+wMGRb8xpLMcSjO4ZQtbTc9EGZ9XLqHBSbP0hsfkgVjc2ZKHG1rp7yNYDrEZHwst8KJT2BEtBf6t7YUQa9oZqCk1TQlbbm4YmRhrR4K+OicNhKXlrjJFULVpAiKx87KKtS0o8l/TIDODvtLAxToy2AqMoTY9mH3rsl5bcpLfklJKSWjQKwIPez1Y/xcHdaD7fHC3+vOhPktk7YvECluYT+oUrmtllyM8mdZXBKEDmWdkSLmh4lN6xc901H9zqzrrGh4YRuPuoF4wsMMacARCrnEZlDo0DCoUDzxkk/soDR1FHr7UIZbjiHiUHuTJyyAK2IH57t69p3mRj29Igk1X8WauHmNsbdsxqQNCe4zaMPivucG5gOlmXZCxSIhRIomfUDjDRVz6DsP2YW8i+daMPvZAGp0B4FaMIQvcu4WLe4H2hw/qZsNCnyyuHfiXgtQMEJrMlC08EBmyPjlQUka9s+5ZIPeToxgB.eyJlbmRwb2ludF9zbHVnIjoiYW50aHJvcGljL2NsYXVkZS1vcHVzLTUuNS0yMDI2MDkyMXxjbGF1ZGUtb24tYXdzIn0"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3053,
+    "completion_tokens": 63,
+    "total_tokens": 3116,
+    "cost": 0.013472,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.013472,
+      "upstream_inference_prompt_cost": 0.012212,
+      "upstream_inference_completions_cost": 0.00126
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 38,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

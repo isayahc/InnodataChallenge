@@ -8,7 +8,8 @@
     "test": "bun test",
     "history": "bun run history.ts",
     "dashboard": "bun run dashboard.ts",
-    "render": "bun run render.ts"
+    "render": "bun run render.ts",
+    "submission": "bun run submission.ts"
   },
   "engines": {
     "node": ">=22.14.0"

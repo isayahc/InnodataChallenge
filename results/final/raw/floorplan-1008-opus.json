@@ -1,0 +1,55 @@
+{
+  "id": "gen-1794687423-biuRUDuREMXnYo6TrW5T",
+  "object": "chat.completion",
+  "created": 1794687423,
+  "model": "anthropic/claude-opus-5.5",
+  "provider": "Claude Platform on AWS",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "end_turn",
+      "message": {
+        "role": "assistant",
+        "content": "[{\"id\":\"door_count\",\"answer\":4}]",
+        "refusal": null,
+        "reasoning": "I'm counting the doors between rooms: there's one between R1 and R2 at the top, plus ones linking R2 to R3 and R2 to R5, and R4 to R5. The bathroom in R4 has no door to the kitchen, since the wall between R2 and R4 is solid, so the total comes to four.\n\n",
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "text": "I'm counting the doors between rooms: there's one between R1 and R2 at the top, plus ones linking R2 to R3 and R2 to R5, and R4 to R5. The bathroom in R4 has no door to the kitchen, since the wall between R2 and R4 is solid, so the total comes to four.\n\n",
+            "format": "anthropic-claude-v1",
+            "index": 0,
+            "signature": "CAQS8AUKEAgTGAI4AUIIdGhpbmtpbmcSDLASZG/ft68TgyUS7RoM419x8I1yYiub4z4IIjC39BWkSzayYokHSM7WgExN2oQNkfqaAInuip8MGKA0O8ksKLa7C5y8k8kLvgRiSMAqjQVVZ0nnUPIA7+YiGft9GCkORskYh3Edo7/Rf/Kt/3NFAytuQJTVhTYv1NuzmUvfVKEPTvB6covpJiac9zH8LAbQeLI7f3Hq8bxcDYRGhjrt2L4E4UeIpvYg8a/cYa9qIOOp7k7dMzBFbDerpq3AF1D/Rpz+i0R5asSHn3k1TXAooskVBxC6rWDWnf5JPBWQwp80Qjon+JXfL4efkVDAauGB8lcZOAWkk5RjDgW4XzkvFuZyKIeTefz2BYxia+RsM8xakiDDZMAGmchC9kxEj5nSyU9MCOcCHNGlyso4/kXCjUnBIfmkRDXmI//zL/cZQ406VmeCevdhuQH4fbBMEDHggpdXCACAqiyItblQk814928vd0G8qMM1IsGafiVgZyCHH1jNR/PVSogt3TEvXX6sVHQHmHf/C4hzxNLJx2Nmrkiv/cVcJQN0mydQM/1q53f0L6ny5uLGDTT2tR/Xos8Hz9RMTAkNiCi9CI7SoMTyt8x2ga1q6WHe+jST/C2TzCFZqk4hr0zvNtrn16aj++NOhLI/hu9rzVYK2SNP2rL+C9fP5rlRNvAmJYE64salChVGXktGRM3vkFU4LCpTXYwR6WrnzGkBPA5+pD/bozlAseQ2vrab8Kd/EgDGW6aaQKyH7uWyx5HwPFivjpLWVuTe0CDSOyyvsEJJ6MKuFH864gBPBk/uuRZ2POC1gr3Otxf+kNEuzHdwEd/ISpsQNBXlUJUQiPO45K6iyf9vkimAiGXxikmxO1NakdK5ekX57SeXW8gwKrvaKYCZZTOvU5k4hw22AF0HkqyWzHd+HVUQhj12MNA4snhuEKV6VQTasxtrGNxumNl3HC/ZRun6+Z5n1YeQE1O4A2TtHUP/MBgB.eyJlbmRwb2ludF9zbHVnIjoiYW50aHJvcGljL2NsYXVkZS1vcHVzLTUuNS0yMDI2MDkyMXxjbGF1ZGUtb24tYXdzIn0"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4918,
+    "completion_tokens": 92,
+    "total_tokens": 5010,
+    "cost": 0.021512,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.021512,
+      "upstream_inference_prompt_cost": 0.019672,
+      "upstream_inference_completions_cost": 0.00184
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 74,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

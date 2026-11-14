@@ -1,0 +1,55 @@
+{
+  "id": "gen-1794687381-WHRWsxNOcH53aOGDMtVg",
+  "object": "chat.completion",
+  "created": 1794687381,
+  "model": "anthropic/claude-opus-5.5",
+  "provider": "Claude Platform on AWS",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "end_turn",
+      "message": {
+        "role": "assistant",
+        "content": "[{\"id\":\"door_count\",\"answer\":6}]",
+        "refusal": null,
+        "reasoning": "I'm counting the doors between rooms: R1-R2 is a single door, and R2-R3, R3-R4, R3-R5, R2-R5, and R5-R4 make up the rest, for six in total.\n\n",
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "text": "I'm counting the doors between rooms: R1-R2 is a single door, and R2-R3, R3-R4, R3-R5, R2-R5, and R5-R4 make up the rest, for six in total.\n\n",
+            "format": "anthropic-claude-v1",
+            "index": 0,
+            "signature": "CAQSpwUKEAgTGAI4AUIIdGhpbmtpbmcSDFiEL9Y0JZT3AW+dHhoMWRjf/mdWWwddssEBIjAsnMP8wC2iCoMIJqJSk/oOSS5N3yfVUaFzB214cbK70v13odP20tW8JYDJZijrH6AqxAQ+b7yCJJpUXuq20fKq5NV/qCWvFjHJ1E1WuVT40rhhTamlMAPGnGoexrA73aWSELMkgIZZg/D2g8SlMrf+TR2O6BN66NGjr2y7rJHrT0oLXtk4WEgAksh3PRH9jvxPXnij/TbCl44F1+sZGC3AzEIsHKNqXi6yiYvvcI2Z+yeq2RyH2B3b9AoxocItuufGLmrO9PdB8/RCSdzNOBUmbvTE6HftegG7Rq0glBVf1fGtauGaL/J4m97CC1PicCQ/WwUFf/KVgWASpHLjLLOj+YzGFy3vtCiHRMe8cCVKhJXZ/wg6+N9gtQlFlz4NfncGgIKtrRMVkp1Mb7vUdH3msSAjdmCErscJTdaL5Uxx24CFSDm5+8lQF7Gp1usr0UGgCdYEXNEVYMA1YBwMpiiR7I/R0naOHHxh0Yfxt5KHiAeUX9Rr5NpjSz4VUMHG/1BHEKAMBBgedqa5YWVL2mFRtF1Z0a2FV2i+OojF3xS62A8blxYxiCVKjJI+7eVjvXFstKtgs8IDiiKcsdUrwI2oR6Q5JO29QJulC5Do1Pl/35RM3ZFYOO3Bjx3Bu9cl70jNVdzC3FoJBi41o0tcsk/fJxZc2jAM69wFor1i8t5Z+POhoRFpwgubSJp250YaQv9kT6f8lRx5hlJ3PvlrYjNdNsvu+6MUzrcmSel4rYyR3d8aFdl0C6xgyS7Yr3ezMxLM9GEdKjGTG25IxTyg73PYH+W4aHz1t39ZbhQy+Sc1jancwpzZx3z2hc6fpkZHgrBSHF2mDPTRGAE=.eyJlbmRwb2ludF9zbHVnIjoiYW50aHJvcGljL2NsYXVkZS1vcHVzLTUuNS0yMDI2MDkyMXxjbGF1ZGUtb24tYXdzIn0"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4067,
+    "completion_tokens": 68,
+    "total_tokens": 4135,
+    "cost": 0.017628,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.017628,
+      "upstream_inference_prompt_cost": 0.016268,
+      "upstream_inference_completions_cost": 0.00136
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 50,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

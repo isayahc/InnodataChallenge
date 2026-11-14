@@ -1,0 +1,61 @@
+{
+  "id": "gen-1794687439-sMb9nr5MpAtSV4DJrsm8",
+  "object": "chat.completion",
+  "created": 1794687439,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "message": {
+        "role": "assistant",
+        "content": "[{\"id\":\"R2_R6_door\",\"answer\":\"no\"}]",
+        "refusal": null,
+        "reasoning": "**Determining door placement**\n\nI need to figure out if there's a direct door between R2 and R6. R2 is located in the kitchen at the top right, while R6 is in the study at the bottom left. It looks like R2 is separated from R6 by R4, which is a large bathroom, plus possibly a partition. So, it seems there isn't a direct door between them. I'll need to output this information in JSON format.",
+        "reasoning_details": [
+          {
+            "type": "reasoning.summary",
+            "summary": "**Determining door placement**\n\nI need to figure out if there's a direct door between R2 and R6. R2 is located in the kitchen at the top right, while R6 is in the study at the bottom left. It looks like R2 is separated from R6 by R4, which is a large bathroom, plus possibly a partition. So, it seems there isn't a direct door between them. I'll need to output this information in JSON format.",
+            "format": "openai-responses-v1",
+            "index": 0
+          },
+          {
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABq-MHSYMjhOqOhwHq4sBhGHWkSdbuClkJh_QHasnR1Y81TveT9cFqwHZ5SnxN-UaJpSfDOSiXcD8yqXt4_m63myKfksexlnExzRUcFffaKB_PHlnrfpTymaHPkphhyLVlP9rgBlTxQSF2Ymf1PXIv3Qb58AodBMoTT6RIxyts0GjoYrkkaPwwxshADtx39rdkVKXKhZyRtpmdHdkyRFwvIueBkV4g8PEavVygkOJogfqz6pZ2R1YPW-TVhGs8Roysu6jjT0DXqLq-NTEvcCiftKkfvinqEUgvbgPw66dB8RgnwlR98YwY_hf3EJ4JRUCkURr6uPIKZtts8nsBHSSoPnlTljNg9ZwxzVDUnuhLGbtGBx6s7lxsbWbrJa1UPlSy5ADsExznIKrbqXW5jiDNAVOr8wpVB98lAgFXR6FErkSUx1OhBS6P0zLw2Gvqjp3N8j6xxcpQqiQnkRcc4wovsGMfGQfuDB9Exw7Knea32z8VJ3sq4MNnxPr7Y7sn7N-cy3IhBVJvFe7rwrCzDdtAlTLtuYiJKK3l_QRJSt78CFPqXYhOQ3Mo9wGsgci2x0-BRsPbLu9V6dW8jQOWMhYFZ-uj_v3xgYz4IqXWA8Hf8iMT-jtOUgiDhIljdcV2iDWDqRf2aL1leLETMmXjin8f5pfXIeRIWlj0Hb73IbxOL1IbjBc9A3f7mUY7zyFzvFbgYHIargH7ikgcvcinRuny7Pc2X23S3D-PelWxkF3_r7f0yCw9mC-NUHrEp-BTfk8r0v2c3vqUeldjUAwzpyk8F_DqKfJIv8dKVc8HhQtORXgJCqsDIKbv5KVcq5P8crUGnY1xLaS1hX45jBR7wMl7t9_jg8n8dRrdljp-ykpd4QVUSv6e1sTEL-cOsj2EWql1cdTAESjJ8iQYhC_11yUINv0iTEIFFrhHbEoKEyxzus9NWXnHye21bAtN_uHtjhMvnu1ZsWVEqrVsBEfD7obueD1DcXiBw4997SNHlB6ikQ1eWLV0IYuleZa2z9bmFg8mc0Dv1kOdERuZCyCQb8i3-JWCq8k8Ckqf-4uZTBYCDnBvy7r0jHvPwW_Sv109iuzsOIKLsxHEhZu-7haudV42ahUtr1aTI0WAt2IEznm82p-ypZ4WSPPASE8QZz-N0zmzCzDmCpxpMsxecft2Sk3SNZtUzif--LlNXeXU17Vvznk4ktOB0A75sUHj3ik5DWG-YBphYSYLamKEQHkuEiqAjQq380PHbW_yUWlQ8wo4tpVmYJ_8JV42jyApS4v5S88X5XFHeMlgMiu1caZ_DdgY9ZMeh8Go2mUlAE538LtkoO9Z-a3FmmJ-Sw0VOsi4TbdKF2v90Nfrwd-NL32FF30sFH_duy2YwM0LvEks4TRs2hI43WAdWgj0eeDzE4hbPUrA5A3GPKHtPQWdbis6M03BSCxRUGExhWgk2Hm6CyI_eEzFaNAXUoFevhxmcvzHGWs4BcuOun4ivSGSQW34I5TqfAGh_vGHvcGXHtufOB7MENF6SYPH_WTu69jagQ_yI4QqT6jzF8zhbPYeLFsePPLyiEQ1SZNE6y0Uv-id42CraWR8CPrxSkPfb1a5txHiNdh47SUFyenyrKo2XPBNwgxmnfl3_qpIOeZzxm-BvUeRGCgzg9HQyNc7jFTMniHcBnW3YcgjTB8OyrPkj45p9KOzdEiTu0tEfG3GGG1z7miR7n2dwfr-qk05Q7TWckSbiwVBqKWkwS4kss2As5TZFpOX6RpekNPLP-ryLmNmD9hwSqpT6bWqWVSmsUIoywJTjHJaCM_ZtpIMkk3PSrNvL-yTI5if9QYrnsCiYQwYJJ98bOTBFpCD9sQWWc980Kcpn9xdarNs5lChCepduvAp863Y22t1jfo2_luAzIJteAZklBXQ3Q9mmGo2_26-emBrX-WAbDF6DGmu0oavX42EFLe6ok8dHfzZCjV4z1aJqDEiJ-Xc_cU8-XNp5ixi-tKxt9ItMYsgBkz8MjVMahY-D7jikauSYygSoF9e12-hwp5RdnWjF4q7Lt2op5Z9-UrQIxBORChNJXNFZD3U38yvvxIhhmVLYIveHOhufPhnlInX9nk1kjieoZlL0I5jm9LjzI9rEC1y9ELCNpcsYzHS-XMSbsotAG7WHYBm6eRRKpAok3W9TJEFo39c__oo--YVYGE0moF-tzGOnAVSoQa_zMH_hiYs9F2uQb8tBzJdDp0IXDMBBrv5nKs9ZTflbg6XM9MtDjOzcwKdb30ufK9tEhxGI2Fd6e6jaGcCRUIF9aeZn-TQzdKb0eyef4m_i5ukBdDvmmrPO470SiZpjVrGSD9PcdPAP49wzN0EmHnhZ5oXe5JtLw53-z6nZHmJ8DJY4VDy2scYy.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+            "format": "openai-responses-v1",
+            "id": "rs_0f34859a93daaee7016af8c1d04acc87d1826eff3705832d16",
+            "index": 1
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4153,
+    "completion_tokens": 73,
+    "total_tokens": 4226,
+    "cost": 0.0000783,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 4150,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0000783,
+      "upstream_inference_prompt_cost": 0.0000418,
+      "upstream_inference_completions_cost": 0.0000365
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 51,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

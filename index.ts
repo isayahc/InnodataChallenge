@@ -4,10 +4,11 @@ import { resolve, join } from "node:path";
 import { generateFloorplan } from "./agents/floorplan";
 import { generateImage, RENDERER_ID } from "./agents/image";
 import { generateQuestions } from "./agents/questions";
-import { verifyImage } from "./agents/verify";
+import { verifyImage } from "./eval/verify";
 import { History, defaultDatabasePath } from "./storage";
-import { EVALUATORS } from "./agents/evaluators";
-import { evaluateAll } from "./agents/evaluate-all";
+import { EVALUATORS } from "./eval/evaluators";
+import { evaluateAll } from "./eval/evaluate-all";
+import { validateTasks } from "./validate/tasks";
 import { selectNovelPlan } from "./agents/diversity";
 
 const provider = process.env.TEXT_PROVIDER ?? "anthropic";
@@ -52,9 +53,12 @@ try {
   console.log("3. Generating question set...");
   const questions = await generateQuestions(host, plan, pastJobs);
   await save("questions.json", questions);
+  const validation = validateTasks(plan, image.svg, questions);
+  await save("validation.json", validation);
+  if (!validation.valid) throw new Error(`Task validation failed: ${JSON.stringify(validation)}`);
   history.addTasks(jobId, join(output, imagePath), questions);
   console.log("4. Evaluating independently with Claude Opus 5.5 and GPT-6 Luna...");
-  const results = await evaluateAll(history, jobId, EVALUATORS, evaluator => verifyImage(host!, image.uri, questions, evaluator));
+  const results = await evaluateAll(history, jobId, EVALUATORS, evaluator => verifyImage(image.uri, questions, evaluator));
   await save("verification.json", results);
   const failures = results.filter(r => r.status === "error");
   history.finish(jobId, failures.length ? failures.map(r => `${r.evaluator.name}: ${r.error}`).join("; ") : undefined);

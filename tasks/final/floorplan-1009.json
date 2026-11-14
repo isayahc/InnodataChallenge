@@ -1,0 +1,109 @@
+{
+  "seed": 1009,
+  "generator_version": "partition-v1",
+  "floorplan": {
+    "width": 18,
+    "height": 16,
+    "rooms": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 3,
+        "height": 9,
+        "id": "R1",
+        "name": "Living room"
+      },
+      {
+        "x": 3,
+        "y": 0,
+        "width": 9,
+        "height": 9,
+        "id": "R2",
+        "name": "Kitchen"
+      },
+      {
+        "x": 12,
+        "y": 0,
+        "width": 6,
+        "height": 16,
+        "id": "R3",
+        "name": "Bedroom"
+      },
+      {
+        "x": 0,
+        "y": 9,
+        "width": 9,
+        "height": 7,
+        "id": "R4",
+        "name": "Bathroom"
+      },
+      {
+        "x": 9,
+        "y": 9,
+        "width": 3,
+        "height": 7,
+        "id": "R5",
+        "name": "Office"
+      }
+    ],
+    "doors": [
+      {
+        "from": "R2",
+        "to": "R4"
+      },
+      {
+        "from": "R3",
+        "to": "R5"
+      },
+      {
+        "from": "R2",
+        "to": "R3"
+      },
+      {
+        "from": "R1",
+        "to": "R2"
+      },
+      {
+        "from": "R4",
+        "to": "R5"
+      }
+    ]
+  },
+  "question": {
+    "id": "R4_width",
+    "question": "What is the labelled width (W) of room R4, in metres?",
+    "answer": 9,
+    "answer_type": "integer"
+  },
+  "checks": {
+    "valid": true,
+    "geometry": true,
+    "errors": [],
+    "tasks": [
+      {
+        "id": "R4_width",
+        "referenceMatches": true,
+        "recomputed": 9,
+        "labelsLegible": true,
+        "rendererConsistent": true,
+        "valid": true
+      }
+    ],
+    "note": "Programmatic geometry, reference and font-size checks. Human visual review remains separate."
+  },
+  "render": {
+    "renderer": "floorplan-svg-v1/resvg-js@2.6.2",
+    "engine": "@resvg/resvg-js",
+    "engineVersion": "2.6.2",
+    "font": "dejavu-fonts-ttf@2.37.3/DejaVuSansMono.ttf",
+    "fontSha256": "b4a6c3e4faab8773f4ff761d56451646409f29abedd68f05d38c2df667d3c582",
+    "width": 1940,
+    "height": 1740,
+    "pixelsPerMetre": 100,
+    "margin": 70,
+    "dpi": 96,
+    "systemFonts": false,
+    "svgSha256": "a2d402cb7505186b0bfb8c63ea51c048f96dcad1070b9ac7f6d7f8c17f658922",
+    "pngSha256": "c52b0f2a5240e677b87171826e5a651c5db0f1626338202d1bb87a018dea0b94"
+  }
+}

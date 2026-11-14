@@ -1,0 +1,2 @@
+# Submitted artifacts must retain their exact bytes for SHA-256 replay checks.
+tasks/final/** -text

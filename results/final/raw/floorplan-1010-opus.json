@@ -1,0 +1,55 @@
+{
+  "id": "gen-1794687436-DrMy0XGVZBKqa5SdUlrr",
+  "object": "chat.completion",
+  "created": 1794687436,
+  "model": "anthropic/claude-opus-5.5",
+  "provider": "Claude Platform on AWS",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "end_turn",
+      "message": {
+        "role": "assistant",
+        "content": "[{\"id\":\"R2_R6_door\",\"answer\":\"no\"}]",
+        "refusal": null,
+        "reasoning": "I'm checking the positions of R2 and R6: R2 sits top right and R6 bottom left, so they aren't adjacent and don't share a wall.\n\n",
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "text": "I'm checking the positions of R2 and R6: R2 sits top right and R6 bottom left, so they aren't adjacent and don't share a wall.\n\n",
+            "format": "anthropic-claude-v1",
+            "index": 0,
+            "signature": "CAQSpQUKEAgTGAI4AUIIdGhpbmtpbmcSDLXEj1ZTTFWK+iyUPhoMdklPeVMhqknJJywuIjBmUdkWUpVLDfHnxepc22JAmXzBqjzV8ICsk1tgRZdzOOA/BYkbqzH1n0ksCtvz1ccqwgQtIsfrsNwHA4afp62Ob9el6VmpCcYCPzc9ckuIa4pVqsP1uVEp7KcDyUSjzcDksjhQwIl/Kiz054RJzJ/vgBRbXbyyM5xS5EDJwho0N8k7+bPvonm9BN33CquCqJBt7kK2p5dBgFKdw9PxILQmNtcP5SYOMhkvDNgDhPS+43e7Z/EUh4RHVVCZZ9BRJ4ICJehYG6OYKHmOQiCBtsufiTL+hmb04M9CDqpl6/HAAwLnzFIHpAcDXyiNfASBrskdwlQ6zhoaKH9oWlt5kQPYa5Kk9LlX8FkPzEJNEC3+y1LykGGLpx8IMzPWKfa1gnJ1Z/1k93AUBo4bPe3Ue7xvNXTaFRAiYEL9QRMlBJKcSjLQuz7JOLoq9NdF9/fxyeyVhhRHwnlmuZHy1KY2XkURvF0tuLbD2zS4mBCMHY1igntNM067yqEeZj0om5Z6lqoPjvNOUwSrqZ1ThP1DZEvRiG74P6a3YvPdKjv6DavkJzis3jcqdyxVsSNjzrBsSDcS3i85q/uHBKvU4jM3ge5qIZt2LSxG7q4OnoRBVKwgl2Ab3cPv5yOihyUYIiaQ5rQ2CPU7JbiL1iKRPOK8DOqrq9LNB+vr6+tiUi/CVaGU67XHRSP3/Hhzo52z4JxjlB/IZJGqP5/cYrmedZSHr/z1R9esmtnCdQQyQEY1XbIKuvuSZGNGwBH3yBJvOoWbxLZN0dnXF+udaDaSUbRFllvnwvnr4fEn4g6wnkgN0DwUWWQUee5ax1JLph32e1VMyqdWU06RLxgB.eyJlbmRwb2ludF9zbHVnIjoiYW50aHJvcGljL2NsYXVkZS1vcHVzLTUuNS0yMDI2MDkyMXxjbGF1ZGUtb24tYXdzIn0"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4549,
+    "completion_tokens": 51,
+    "total_tokens": 4600,
+    "cost": 0.019216,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.019216,
+      "upstream_inference_prompt_cost": 0.018196,
+      "upstream_inference_completions_cost": 0.00102
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 27,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

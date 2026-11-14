@@ -1,0 +1,117 @@
+{
+  "seed": 1010,
+  "generator_version": "partition-v1",
+  "floorplan": {
+    "width": 17,
+    "height": 17,
+    "rooms": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 5,
+        "height": 3,
+        "id": "R1",
+        "name": "Living room"
+      },
+      {
+        "x": 5,
+        "y": 0,
+        "width": 12,
+        "height": 3,
+        "id": "R2",
+        "name": "Kitchen"
+      },
+      {
+        "x": 0,
+        "y": 3,
+        "width": 5,
+        "height": 3,
+        "id": "R3",
+        "name": "Bedroom"
+      },
+      {
+        "x": 5,
+        "y": 3,
+        "width": 12,
+        "height": 14,
+        "id": "R4",
+        "name": "Bathroom"
+      },
+      {
+        "x": 0,
+        "y": 6,
+        "width": 5,
+        "height": 4,
+        "id": "R5",
+        "name": "Office"
+      },
+      {
+        "x": 0,
+        "y": 10,
+        "width": 5,
+        "height": 7,
+        "id": "R6",
+        "name": "Study"
+      }
+    ],
+    "doors": [
+      {
+        "from": "R3",
+        "to": "R4"
+      },
+      {
+        "from": "R2",
+        "to": "R4"
+      },
+      {
+        "from": "R1",
+        "to": "R2"
+      },
+      {
+        "from": "R5",
+        "to": "R6"
+      },
+      {
+        "from": "R4",
+        "to": "R6"
+      }
+    ]
+  },
+  "question": {
+    "id": "R2_R6_door",
+    "question": "Is there a direct door opening between rooms R2 and R6? Answer yes or no.",
+    "answer": "no",
+    "answer_type": "label"
+  },
+  "checks": {
+    "valid": true,
+    "geometry": true,
+    "errors": [],
+    "tasks": [
+      {
+        "id": "R2_R6_door",
+        "referenceMatches": true,
+        "recomputed": "no",
+        "labelsLegible": true,
+        "rendererConsistent": true,
+        "valid": true
+      }
+    ],
+    "note": "Programmatic geometry, reference and font-size checks. Human visual review remains separate."
+  },
+  "render": {
+    "renderer": "floorplan-svg-v1/resvg-js@2.6.2",
+    "engine": "@resvg/resvg-js",
+    "engineVersion": "2.6.2",
+    "font": "dejavu-fonts-ttf@2.37.3/DejaVuSansMono.ttf",
+    "fontSha256": "b4a6c3e4faab8773f4ff761d56451646409f29abedd68f05d38c2df667d3c582",
+    "width": 1840,
+    "height": 1840,
+    "pixelsPerMetre": 100,
+    "margin": 70,
+    "dpi": 96,
+    "systemFonts": false,
+    "svgSha256": "85a3558254fbb7cc17c0e93a10607539e878f8a591f2877b458822686eb09837",
+    "pngSha256": "32beb87aff9a65601e8b38d5b5b9532cd2fd44e034639192f3580c0d35c24c9c"
+  }
+}

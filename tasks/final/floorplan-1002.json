@@ -1,0 +1,113 @@
+{
+  "seed": 1002,
+  "generator_version": "partition-v1",
+  "floorplan": {
+    "width": 17,
+    "height": 15,
+    "rooms": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 5,
+        "height": 15,
+        "id": "R1",
+        "name": "Living room"
+      },
+      {
+        "x": 5,
+        "y": 0,
+        "width": 3,
+        "height": 15,
+        "id": "R2",
+        "name": "Kitchen"
+      },
+      {
+        "x": 8,
+        "y": 0,
+        "width": 4,
+        "height": 11,
+        "id": "R3",
+        "name": "Bedroom"
+      },
+      {
+        "x": 12,
+        "y": 0,
+        "width": 5,
+        "height": 15,
+        "id": "R4",
+        "name": "Bathroom"
+      },
+      {
+        "x": 8,
+        "y": 11,
+        "width": 4,
+        "height": 4,
+        "id": "R5",
+        "name": "Office"
+      }
+    ],
+    "doors": [
+      {
+        "from": "R2",
+        "to": "R3"
+      },
+      {
+        "from": "R4",
+        "to": "R5"
+      },
+      {
+        "from": "R3",
+        "to": "R5"
+      },
+      {
+        "from": "R3",
+        "to": "R4"
+      },
+      {
+        "from": "R1",
+        "to": "R2"
+      },
+      {
+        "from": "R2",
+        "to": "R5"
+      }
+    ]
+  },
+  "question": {
+    "id": "door_count",
+    "question": "How many interior door openings are shown?",
+    "answer": 6,
+    "answer_type": "integer"
+  },
+  "checks": {
+    "valid": true,
+    "geometry": true,
+    "errors": [],
+    "tasks": [
+      {
+        "id": "door_count",
+        "referenceMatches": true,
+        "recomputed": 6,
+        "labelsLegible": true,
+        "rendererConsistent": true,
+        "valid": true
+      }
+    ],
+    "note": "Programmatic geometry, reference and font-size checks. Human visual review remains separate."
+  },
+  "render": {
+    "renderer": "floorplan-svg-v1/resvg-js@2.6.2",
+    "engine": "@resvg/resvg-js",
+    "engineVersion": "2.6.2",
+    "font": "dejavu-fonts-ttf@2.37.3/DejaVuSansMono.ttf",
+    "fontSha256": "b4a6c3e4faab8773f4ff761d56451646409f29abedd68f05d38c2df667d3c582",
+    "width": 1840,
+    "height": 1640,
+    "pixelsPerMetre": 100,
+    "margin": 70,
+    "dpi": 96,
+    "systemFonts": false,
+    "svgSha256": "75fe709341479cf4d2b58614bfedc700f6fc185c55bf90631b5884340173f7d9",
+    "pngSha256": "1de661a30357d43d2936eb468ac026dbd8b42d800bf6d92f9cce627b52256b3d"
+  }
+}

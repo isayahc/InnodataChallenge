@@ -2,7 +2,91 @@
 
 A floorplan task generator and model evaluation pipeline coordinated by `index.ts`, with SQLite job history.
 
-## Quick start
+## Reported folders
+
+- Task folder: `tasks/final` — 10 tasks, seeds 1001–1010, with PNG/SVG images,
+  per-task JSON, `tasks.jsonl`, and a SHA-256 manifest.
+- Results folder: `results/final` — model responses, raw provider responses,
+  `run_config.json`, and `summary.json`.
+
+The reported generator is `generator/seeded.ts` (`partition-v1`). It deterministically
+partitions rectangles and constructs connected door graphs. `submission.ts` runs the
+implementations in `validate/` (geometry, independent references, SVG legibility checks)
+and `eval/` (OpenRouter calls, prompt, extraction, scoring, and reporting).
+The interactive LLM generator below remains a separate exploratory workflow.
+
+## Pilot results
+
+Exploratory generative-image pilots achieved 13/16 and then 15/16 raw answer matches.
+A subsequent dual-model pilot achieved Opus 14/16 and Luna 12/16. We replaced generated
+images with deterministic SVG/PNG rendering to make doors and labels consistent with
+the reference geometry, and added bounded corrective retries for invalid layouts.
+The deterministic-render pilot (`759a1685-0add-4007-97e1-6d98e7e0f9d4`)
+achieved 29/29 raw matches for each model before task-validity review.
+These are exploratory results, not reviewed final benchmark scores.
+
+The final Docker replay scored **10/10 (100%) for each model**, with 20 parsed,
+complete responses and zero errors. All rebuilt artifact hashes matched.
+Full final responses and settings are in `results/final`.
+
+For submission replay we added a seeded procedural generator, pinned rendering dependencies,
+independent reference recomputation, and artifact hash checks. The reported tasks test
+door counting, labelled widths, and direct connectivity; these basic tasks may be easy
+for both models. No task was selected based on a model's final answer.
+
+## Local exploratory workflow
+
+See the installation and run steps below for the interactive generator and dashboard.
+
+## Hand check
+
+AI-assisted visual inspection of all 10 PNGs found readable labels and the following
+evidence. These notes are not a claim of human review; human sign-off is still pending.
+
+| Task | Visual evidence for reference |
+| --- | --- |
+| floorplan-1001 | R2 and R3 share a horizontal wall with a door opening: yes. |
+| floorplan-1002 | Six openings: R1–R2, R2–R3, R3–R4, R3–R5, R2–R5, R4–R5. |
+| floorplan-1003 | R5 label reads W=13m. |
+| floorplan-1004 | R2–R3 shared wall is solid: no direct door. |
+| floorplan-1005 | Five openings: R1–R3, R2–R3, R2–R4, R3–R5, R4–R5. |
+| floorplan-1006 | R5 label reads W=3m. |
+| floorplan-1007 | R2–R4 horizontal wall has a door: yes. |
+| floorplan-1008 | Four openings: R1–R2, R2–R3, R2–R5, R4–R5. |
+| floorplan-1009 | R4 label reads W=9m. |
+| floorplan-1010 | R2 and R6 are separated by other rooms: no direct door. |
+
+## Limitations and manual interventions
+
+The ten tasks are a small, simple benchmark, not a representative measure of general
+floorplan reasoning. Room names and proportions need not describe practical architecture.
+Automated legibility checks inspect SVG font sizes and door counts, not OCR of the PNG.
+No reported images or references were hand-edited. During Docker testing, one Opus
+response included prose before valid JSON; extraction was generalized to accept a
+schema-valid trailing JSON array, and the complete evaluation was rerun.
+
+## Pipeline and reused components
+
+Seeded partition generation → pinned SVG/PNG renderer → `validate/` geometry,
+reference and legibility checks → independent `eval/` model calls → extraction,
+exact numeric / case-normalized label comparison → per-model summary.
+The renderer uses resvg and DejaVu fonts; schemas use Zod; execution uses Bun.
+The exploratory workflow additionally uses the OpenCode SDK and SQLite history.
+
+## Task difficulty
+
+Unequal room sizes and varied partition/door graphs provide visual variation,
+but the final tasks did not cause answer errors in either model. These results
+do not establish a difficult benchmark. More complex spatial reasoning would
+require a new version and a separately reported evaluation.
+
+## Team contributions
+
+AI assistance was used for implementation, testing, documentation and visual inspection.
+Human team membership and individual contributions have not yet been supplied;
+the team must complete this attribution before final submission.
+
+## Local installation
 
 ### 1. Install and configure
 
@@ -63,10 +147,10 @@ For container commands, see [Run in Docker](#run-in-docker).
   pinned `@resvg/resvg-js` and DejaVu fonts. It does not call an image-generation model.
 - `agents/questions.ts`: OpenCode SDK agent organizes questions whose wording and expected
   answers are derived deterministically from JSON, avoiding invented ground truth.
-- `agents/verify.ts`: two independent OpenCode SDK sessions answer the same questions from
+- `eval/verify.ts`: two independent OpenRouter requests answer the same questions from
   the same image, one with Claude Opus 5.5 and one with GPT-6 Luna. Neither sees expected
   answers or the other model's responses. Code compares each response against ground truth.
-- `agents/evaluators.ts`: the explicit evaluation model IDs; `agents/evaluate-all.ts` runs
+- `eval/evaluators.ts`: the explicit evaluation model IDs; `eval/evaluate-all.ts` runs
   both and isolates errors so one provider failure cannot erase the other model's results.
 
 Each run generates one image and evaluates its questions once per model. Wrong answers are retained,
@@ -87,7 +171,7 @@ Image evaluation always runs **both** models through OpenRouter:
 | GPT-6 Luna | OpenRouter | `openai/gpt-6-luna` |
 
 `TEXT_PROVIDER` and `TEXT_MODEL` only affect generation/question agents, not evaluation.
-Both evaluation sessions start independently with identical image/question inputs.
+Both evaluation requests run independently with identical image/question inputs.
 
 | Setting | Default | Purpose |
 | --- | --- | --- |
@@ -236,18 +320,31 @@ An early failed job lists its configured models even if a stage did not execute.
 
 ## Run in Docker
 
-With Docker running and your API key in `.env`:
+From the repository root, with Docker running, build the complete pipeline:
 
 ```sh
 docker build -t innodata-challenge .
-docker run --rm --env-file .env -v "${PWD}/outputs:/app/outputs" innodata-challenge
 ```
 
-For OpenRouter:
+Set `OPENROUTER_API_KEY` in your host shell (PowerShell:
+`$env:OPENROUTER_API_KEY = "YOUR_KEY"`; Bash:
+`export OPENROUTER_API_KEY="YOUR_KEY"`). Then run this command, valid in either shell:
 
 ```sh
-docker run --rm --env-file .env -e TEXT_PROVIDER=openrouter -v "${PWD}/outputs:/app/outputs" innodata-challenge
+docker run --rm -e OPENROUTER_API_KEY -v "${PWD}/submission-run:/app/submission-run" --entrypoint bun innodata-challenge run submission.ts reproduce --output /app/submission-run
 ```
+
+This rebuilds all 10 reported seeds, checks image/question/reference artifact hashes,
+evaluates **both** `anthropic/claude-opus-5.5` and `openai/gpt-6-luna`, and scores their
+answers. Rebuilt tasks and results persist in `submission-run/tasks` and
+`submission-run/results`. Inspect `summary.json` for per-model scores and error counts;
+`responses.jsonl` and `raw/` retain individual and full provider responses.
+Temperature is 0 and max output tokens is 4096. Rebuilt tasks must be byte-identical;
+provider responses and resulting scores are not guaranteed deterministic.
+Operational failures cause a nonzero exit and remain visible in results.
+
+For a fresh seed, use the same pipeline with `fresh --seed 2026 --output /app/submission-run/fresh`
+in place of `reproduce --output /app/submission-run`. The fresh task is evaluated by both models.
 
 The image uses Debian-based `oven/bun:1.4.4`, installs the OpenCode SDK from
 the dependency lockfile, and runs as the non-root `bun` user. No separate
@@ -270,10 +367,24 @@ docker run --rm -p 127.0.0.1:3000:3000 -e DASHBOARD_HOST=0.0.0.0 -v "${PWD}/outp
 
 ## Checks
 
+Package and check the submission from the repository root (Docker only):
+
+```sh
+docker run --rm -v "${PWD}:/repo" -w /repo python:3.12-slim python submission/package.py
+docker run --rm -v "${PWD}/docs:/checks:ro" -v "${PWD}/submission-run:/submission:ro" python:3.12-slim python /checks/check_submission.py /submission/Innodata_Track2.zip --tasks tasks/final --results results/final --strict
+```
+
+The ZIP is `submission-run/Innodata_Track2.zip`. Packaging uses an allowlist and excludes
+local `.env`, dependencies, Git history and exploratory outputs. Run the supplied checker
+under Linux in Docker: its native Windows folder detection mixes slash separators.
+The checker verifies format; human review and team attribution remain separate.
+
+Local code checks:
+
 ```sh
 npm run check
 npm test
 ```
 
 Tests cover layout validation, answer comparison, SQLite persistence, validity changes,
-error exclusion, and historical metrics. This is not yet a complete challenge submission.
+error exclusion, historical metrics, seeded reproducibility and independent references.

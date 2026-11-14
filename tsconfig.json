@@ -8,5 +8,5 @@
     "skipLibCheck": true,
     "types": ["bun"]
   },
-  "include": ["*.ts", "agents/**/*.ts", "tests/**/*.ts"]
+  "include": ["*.ts", "agents/**/*.ts", "validate/**/*.ts", "eval/**/*.ts", "generator/**/*.ts", "tests/**/*.ts"]
 }

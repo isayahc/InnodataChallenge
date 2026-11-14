@@ -1,0 +1,55 @@
+{
+  "id": "gen-1794687402-GXO1Rwd3CV5IMbNvyE0i",
+  "object": "chat.completion",
+  "created": 1794687402,
+  "model": "anthropic/claude-opus-5.5",
+  "provider": "Claude Platform on AWS",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "end_turn",
+      "message": {
+        "role": "assistant",
+        "content": "[{\"id\":\"door_count\",\"answer\":5}]",
+        "refusal": null,
+        "reasoning": "I'm listing the five doors by their room pairs, R1-R3 at the top, then R2-R3, R2-R4, R3-R5, and R4-R5, which makes five in total.\n\n",
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "text": "I'm listing the five doors by their room pairs, R1-R3 at the top, then R2-R3, R2-R4, R3-R5, and R4-R5, which makes five in total.\n\n",
+            "format": "anthropic-claude-v1",
+            "index": 0,
+            "signature": "CAQSoQUKEAgTGAI4AUIIdGhpbmtpbmcSDMp++TcizKRny3PKxxoM31NkOgrx0PkTYWzTIjDYnyGkLfLUWLrBfrx0mEw1vuOggrIxGk/glnQJ8skUdxxr0zlcvMqzAeF9yAHmkbEqvgSU18pzDp/UDfEQKzMY6B3DAYaIYUsCkHiBB+/ga9x0PjcaXzGtQtJQ5ytObDygu/YwuYRxNh+2vvXvFCa41BsIL0kPTu14OPFYwaILp8qCi1ewj5TS9d78nAQVQu0yOZgbNXtBVc3Nx8DthdPMEgl8aAsziRkor7i1CVpMz7nTZhFxZU8mw28XvwmrJufmjQYl2CFRP0pgV/z9xCtDMtuPAm32moFGx23fh67etkoZhJUzm/4/kjj05JgYbJH5RaroIanT7ZUUt49Zc9nVT7tuqgR5RWUBT1V3ptlf9w9dCb4RvlEj1EkBWgvUGxcnQwMKjIVZvDIbLaDCDdfF0nSI+Plj9BewNzT9ueoP5AyWoqTpI5mXS1M6JqbwK+M3/JnWdozue+V9BRm84B8ltfRu/3ZdSX25KSiecE68q4qZ1uXbz5tJgrxTeJvsm/jWjFNe/ZwnwhXfyRDg8zAr/iOp+HU7L8mrLv77J4FCX6H1CPySdDCZ3GXSTd85sQRDkcklzGGxxm8mz3+xLqaLGyK88N0VorjvrySz1JQC2qTl5F05y+3DLKtAKWjUwnHSJnv10ksAr3J4h+5WkbZYIKkS4aVPaNsocAx29M/rh1JudmqHLuNpWuaR8oDb66MQYv5Gx7SBLcqTjU6ipzyZBjrItnrTbRdF66pOvgDFiGV37PvI/pdFS46RNYuVV86HEWShj7QDmugupxO5f2cx5zb33UML+LLpw+osF/hViXUO0u4k+bwzREfIlX3e+JarGAE=.eyJlbmRwb2ludF9zbHVnIjoiYW50aHJvcGljL2NsYXVkZS1vcHVzLTUuNS0yMDI2MDkyMXxjbGF1ZGUtb24tYXdzIn0"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4142,
+    "completion_tokens": 62,
+    "total_tokens": 4204,
+    "cost": 0.017808,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.017808,
+      "upstream_inference_prompt_cost": 0.016568,
+      "upstream_inference_completions_cost": 0.00124
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 44,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

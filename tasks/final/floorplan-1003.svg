@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1740" height="1440" viewBox="0 0 1740 1440">
+<rect width="100%" height="100%" fill="white"/>
+<g stroke="black" stroke-linecap="butt" fill="none" id="walls"><line x1="70" y1="70" x2="170" y2="70" stroke-width="6"/>
+<line x1="170" y1="70" x2="270" y2="70" stroke-width="6"/>
+<line x1="270" y1="70" x2="370" y2="70" stroke-width="6"/>
+<line x1="370" y1="70" x2="470" y2="70" stroke-width="6"/>
+<line x1="470" y1="70" x2="570" y2="70" stroke-width="6"/>
+<line x1="570" y1="70" x2="670" y2="70" stroke-width="6"/>
+<line x1="70" y1="770" x2="170" y2="770" stroke-width="4"/>
+<line x1="170" y1="770" x2="270" y2="770" stroke-width="4"/>
+<line x1="270" y1="770" x2="325" y2="770" stroke-width="4"/>
+<line x1="415" y1="770" x2="470" y2="770" stroke-width="4"/>
+<line x1="470" y1="770" x2="570" y2="770" stroke-width="4"/>
+<line x1="570" y1="770" x2="670" y2="770" stroke-width="4"/>
+<line x1="70" y1="70" x2="70" y2="170" stroke-width="6"/>
+<line x1="70" y1="170" x2="70" y2="270" stroke-width="6"/>
+<line x1="70" y1="270" x2="70" y2="370" stroke-width="6"/>
+<line x1="70" y1="370" x2="70" y2="470" stroke-width="6"/>
+<line x1="70" y1="470" x2="70" y2="570" stroke-width="6"/>
+<line x1="70" y1="570" x2="70" y2="670" stroke-width="6"/>
+<line x1="70" y1="670" x2="70" y2="770" stroke-width="6"/>
+<line x1="670" y1="70" x2="670" y2="170" stroke-width="4"/>
+<line x1="670" y1="170" x2="670" y2="270" stroke-width="4"/>
+<line x1="670" y1="270" x2="670" y2="370" stroke-width="4"/>
+<line x1="670" y1="370" x2="670" y2="470" stroke-width="4"/>
+<line x1="670" y1="470" x2="670" y2="570" stroke-width="4"/>
+<line x1="670" y1="570" x2="670" y2="670" stroke-width="4"/>
+<line x1="670" y1="670" x2="670" y2="770" stroke-width="4"/>
+<line x1="670" y1="70" x2="770" y2="70" stroke-width="6"/>
+<line x1="770" y1="70" x2="870" y2="70" stroke-width="6"/>
+<line x1="870" y1="70" x2="970" y2="70" stroke-width="6"/>
+<line x1="970" y1="70" x2="1070" y2="70" stroke-width="6"/>
+<line x1="1070" y1="70" x2="1170" y2="70" stroke-width="6"/>
+<line x1="1170" y1="70" x2="1270" y2="70" stroke-width="6"/>
+<line x1="1270" y1="70" x2="1370" y2="70" stroke-width="6"/>
+<line x1="1370" y1="70" x2="1470" y2="70" stroke-width="6"/>
+<line x1="1470" y1="70" x2="1570" y2="70" stroke-width="6"/>
+<line x1="1570" y1="70" x2="1670" y2="70" stroke-width="6"/>
+<line x1="670" y1="370" x2="770" y2="370" stroke-width="4"/>
+<line x1="770" y1="370" x2="870" y2="370" stroke-width="4"/>
+<line x1="870" y1="370" x2="970" y2="370" stroke-width="4"/>
+<line x1="970" y1="370" x2="1070" y2="370" stroke-width="4"/>
+<line x1="1070" y1="370" x2="1125" y2="370" stroke-width="4"/>
+<line x1="1215" y1="370" x2="1270" y2="370" stroke-width="4"/>
+<line x1="1270" y1="370" x2="1370" y2="370" stroke-width="4"/>
+<line x1="1370" y1="370" x2="1470" y2="370" stroke-width="4"/>
+<line x1="1470" y1="370" x2="1570" y2="370" stroke-width="4"/>
+<line x1="1570" y1="370" x2="1670" y2="370" stroke-width="4"/>
+<line x1="1670" y1="70" x2="1670" y2="170" stroke-width="6"/>
+<line x1="1670" y1="170" x2="1670" y2="270" stroke-width="6"/>
+<line x1="1670" y1="270" x2="1670" y2="370" stroke-width="6"/>
+<line x1="670" y1="770" x2="770" y2="770" stroke-width="4"/>
+<line x1="770" y1="770" x2="870" y2="770" stroke-width="4"/>
+<line x1="870" y1="770" x2="970" y2="770" stroke-width="4"/>
+<line x1="970" y1="770" x2="1070" y2="770" stroke-width="4"/>
+<line x1="1070" y1="770" x2="1125" y2="770" stroke-width="4"/>
+<line x1="1215" y1="770" x2="1270" y2="770" stroke-width="4"/>
+<line x1="1270" y1="770" x2="1370" y2="770" stroke-width="4"/>
+<line x1="1370" y1="770" x2="1470" y2="770" stroke-width="4"/>
+<line x1="1470" y1="770" x2="1570" y2="770" stroke-width="4"/>
+<line x1="1570" y1="770" x2="1670" y2="770" stroke-width="4"/>
+<line x1="1670" y1="370" x2="1670" y2="470" stroke-width="6"/>
+<line x1="1670" y1="470" x2="1670" y2="570" stroke-width="6"/>
+<line x1="1670" y1="570" x2="1670" y2="670" stroke-width="6"/>
+<line x1="1670" y1="670" x2="1670" y2="770" stroke-width="6"/>
+<line x1="70" y1="1070" x2="170" y2="1070" stroke-width="4"/>
+<line x1="170" y1="1070" x2="270" y2="1070" stroke-width="4"/>
+<line x1="270" y1="1070" x2="370" y2="1070" stroke-width="4"/>
+<line x1="370" y1="1070" x2="470" y2="1070" stroke-width="4"/>
+<line x1="470" y1="1070" x2="570" y2="1070" stroke-width="4"/>
+<line x1="570" y1="1070" x2="670" y2="1070" stroke-width="4"/>
+<line x1="670" y1="1070" x2="675" y2="1070" stroke-width="4"/>
+<line x1="765" y1="1070" x2="770" y2="1070" stroke-width="4"/>
+<line x1="770" y1="1070" x2="870" y2="1070" stroke-width="4"/>
+<line x1="870" y1="1070" x2="970" y2="1070" stroke-width="4"/>
+<line x1="970" y1="1070" x2="1070" y2="1070" stroke-width="4"/>
+<line x1="1070" y1="1070" x2="1170" y2="1070" stroke-width="4"/>
+<line x1="1170" y1="1070" x2="1270" y2="1070" stroke-width="4"/>
+<line x1="1270" y1="1070" x2="1370" y2="1070" stroke-width="4"/>
+<line x1="1370" y1="1070" x2="1470" y2="1070" stroke-width="4"/>
+<line x1="1470" y1="1070" x2="1570" y2="1070" stroke-width="4"/>
+<line x1="1570" y1="1070" x2="1670" y2="1070" stroke-width="4"/>
+<line x1="70" y1="770" x2="70" y2="870" stroke-width="6"/>
+<line x1="70" y1="870" x2="70" y2="970" stroke-width="6"/>
+<line x1="70" y1="970" x2="70" y2="1070" stroke-width="6"/>
+<line x1="1670" y1="770" x2="1670" y2="870" stroke-width="6"/>
+<line x1="1670" y1="870" x2="1670" y2="970" stroke-width="6"/>
+<line x1="1670" y1="970" x2="1670" y2="1070" stroke-width="6"/>
+<line x1="70" y1="1370" x2="170" y2="1370" stroke-width="6"/>
+<line x1="170" y1="1370" x2="270" y2="1370" stroke-width="6"/>
+<line x1="270" y1="1370" x2="370" y2="1370" stroke-width="6"/>
+<line x1="370" y1="1370" x2="470" y2="1370" stroke-width="6"/>
+<line x1="470" y1="1370" x2="570" y2="1370" stroke-width="6"/>
+<line x1="570" y1="1370" x2="670" y2="1370" stroke-width="6"/>
+<line x1="670" y1="1370" x2="770" y2="1370" stroke-width="6"/>
+<line x1="770" y1="1370" x2="870" y2="1370" stroke-width="6"/>
+<line x1="870" y1="1370" x2="970" y2="1370" stroke-width="6"/>
+<line x1="970" y1="1370" x2="1070" y2="1370" stroke-width="6"/>
+<line x1="1070" y1="1370" x2="1170" y2="1370" stroke-width="6"/>
+<line x1="1170" y1="1370" x2="1270" y2="1370" stroke-width="6"/>
+<line x1="1270" y1="1370" x2="1370" y2="1370" stroke-width="6"/>
+<line x1="70" y1="1070" x2="70" y2="1170" stroke-width="6"/>
+<line x1="70" y1="1170" x2="70" y2="1270" stroke-width="6"/>
+<line x1="70" y1="1270" x2="70" y2="1370" stroke-width="6"/>
+<line x1="1370" y1="1070" x2="1370" y2="1170" stroke-width="4"/>
+<line x1="1370" y1="1170" x2="1370" y2="1175" stroke-width="4"/>
+<line x1="1370" y1="1265" x2="1370" y2="1270" stroke-width="4"/>
+<line x1="1370" y1="1270" x2="1370" y2="1370" stroke-width="4"/>
+<line x1="1370" y1="1370" x2="1470" y2="1370" stroke-width="6"/>
+<line x1="1470" y1="1370" x2="1570" y2="1370" stroke-width="6"/>
+<line x1="1570" y1="1370" x2="1670" y2="1370" stroke-width="6"/>
+<line x1="1670" y1="1070" x2="1670" y2="1170" stroke-width="6"/>
+<line x1="1670" y1="1170" x2="1670" y2="1270" stroke-width="6"/>
+<line x1="1670" y1="1270" x2="1670" y2="1370" stroke-width="6"/></g>
+<g stroke="black" fill="none" id="doors"><g data-door="R2:R3"><line x1="1125" y1="370" x2="1125" y2="280" stroke-width="2"/><path d="M 1215 370 A 90 90 0 0 0 1125 280" fill="none" stroke-width="1"/></g>
+<g data-door="R1:R4"><line x1="325" y1="770" x2="325" y2="680" stroke-width="2"/><path d="M 415 770 A 90 90 0 0 0 325 680" fill="none" stroke-width="1"/></g>
+<g data-door="R3:R4"><line x1="1125" y1="770" x2="1125" y2="680" stroke-width="2"/><path d="M 1215 770 A 90 90 0 0 0 1125 680" fill="none" stroke-width="1"/></g>
+<g data-door="R4:R5"><line x1="675" y1="1070" x2="675" y2="980" stroke-width="2"/><path d="M 765 1070 A 90 90 0 0 0 675 980" fill="none" stroke-width="1"/></g>
+<g data-door="R5:R6"><line x1="1370" y1="1175" x2="1280" y2="1175" stroke-width="2"/><path d="M 1370 1265 A 90 90 0 0 1 1280 1175" fill="none" stroke-width="1"/></g></g>
+<g font-family="DejaVu Sans Mono" text-anchor="middle" dominant-baseline="middle" fill="black" id="labels"><g data-room="R1" font-size="18"><text x="370" y="394.8">R1</text><text x="370" y="420">Living room</text><text x="370" y="445.2">W=6m H=7m</text></g>
+<g data-room="R2" font-size="18"><text x="1170" y="194.8">R2</text><text x="1170" y="220">Kitchen</text><text x="1170" y="245.2">W=10m H=3m</text></g>
+<g data-room="R3" font-size="18"><text x="1170" y="544.8">R3</text><text x="1170" y="570">Bedroom</text><text x="1170" y="595.2">W=10m H=4m</text></g>
+<g data-room="R4" font-size="18"><text x="870" y="894.8">R4</text><text x="870" y="920">Bathroom</text><text x="870" y="945.2">W=16m H=3m</text></g>
+<g data-room="R5" font-size="18"><text x="720" y="1194.8">R5</text><text x="720" y="1220">Office</text><text x="720" y="1245.2">W=13m H=3m</text></g>
+<g data-room="R6" font-size="18"><text x="1520" y="1194.8">R6</text><text x="1520" y="1220">Study</text><text x="1520" y="1245.2">W=3m H=3m</text></g></g>
+<g font-family="DejaVu Sans Mono" font-size="15" fill="black"><text x="70" y="30">N ↑</text><text x="70" y="1418">Dimensions in metres · W east–west · H north–south</text></g>
+</svg>

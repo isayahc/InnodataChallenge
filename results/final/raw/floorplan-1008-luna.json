@@ -1,0 +1,61 @@
+{
+  "id": "gen-1794687428-16FPM7x10iKXIBZFha23",
+  "object": "chat.completion",
+  "created": 1794687428,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "message": {
+        "role": "assistant",
+        "content": "[{\"id\":\"door_count\",\"answer\":4}]",
+        "refusal": null,
+        "reasoning": "**Counting interior door openings**\n\nI’m focusing on counting the interior door openings. I see that there’s one door between R1 and R2, another between R2 and R3, one between R2 and R5, and finally, one between R4 and R5. So that gives me a total of four doors. I have to make sure I’m counting only the interior ones, not the exterior. And then I’ll need to format this in JSON.",
+        "reasoning_details": [
+          {
+            "type": "reasoning.summary",
+            "summary": "**Counting interior door openings**\n\nI’m focusing on counting the interior door openings. I see that there’s one door between R1 and R2, another between R2 and R3, one between R2 and R5, and finally, one between R4 and R5. So that gives me a total of four doors. I have to make sure I’m counting only the interior ones, not the exterior. And then I’ll need to format this in JSON.",
+            "format": "openai-responses-v1",
+            "index": 0
+          },
+          {
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABq-MHHDJNxW9mMGYCedsa9nCGT9SowFS0rnrdINNwuN_o-gbvdtYOQA1xi0jAHqi7PrdRLsTFu6iAyIkKHLBPjv7TfdkTQa-zuIj-dN7Jn9mRfNbas6NpUdFZ20d845JHO3swVlttvTCPB0QgaU-ogV54_-_W_WY72UV8vONVpzznavYEUFY8v8SvlbMUXm9K3NbuH8pxjA2s8Ucw-AkTYiLeJv8vL-ZqF5iqDBFeQZNvef8K8I2iU6SEOhRl1kQqPAgQrxE3UozR7hUL-Cke_GM5vALVbTpST1_g7ZUyvI0h-y0LT5QaM8Qdfx4JX0zJyp1wEbXe6yHtqn24hYEw6Q6adYBEcKKG-UP8sAU_CdTo2G7b5Nao3A1-i-RsDR46Vbb9A47piDMU3xzBH3DqAgf92X3gaYpFK85ZcjfddhGdF-Z4UiHwxnbjr9sJOjcgED8apW0tWGjYEATGcfQ_Lo1hzFHa1HSP85sBjz_uQ8VwJsEyU7bdE8HgXVHf6DUo8Bqvv8sGZ66qyIRcceC9fMexyTlB8xaAPi2l9OIslLNlgAtE3wEpT6tAQaid5zpX7aVPoQJFvd7-EZ_Hl6EjDp0EH--lb2F5t83tt-356APmGyD6bRiSDJbVMOwB4OHlxayh2hUSDkya9vUnjvkpb4puwDtsdDEKtMUcTIciLLESo2nKXEfN-hGMqxaBxbxRWoWlSw3gPb68oXR722-j2VljjWlwmAjlCkAXc1Y848vMnqioe5460FhYLfm_tY5MHAKDfSzk7z6jsNepZW4OM4ejNb-B-l4Il3YTDNV-9kgmP6s4JKwEe6Pjt80mHO5qCAxxaXHpPzR9VdMFLCLb3JEcQ8iIF_8O8GZ9ZW7FUVycdkCq0dd95EmLJIh-VkZyK4XNWDma85KKlIzod1ckxNKsXfIM9ti6GfNibFnaSjBtCdskZF5y70s_5glf61nhB8hVNlHEbJ-HV3kHufAb--XeCnmFDpuSG5f8kwvRiyL7qlO_Ke7ECcgUaEhJ9_RGO2Y2uuCDVKeyYe-cEvLDnRJiG1O0oCl2da8haV65Fgvgui2wLB1uGtCdx9KcA7YwFY6qfceACYBILVDK5Bo6D4a5h9sdaa0G2Fux_8EXLvoKC7-SCa5JAMkmfsKs6eHN2fszNQFNZDcWFm2sahYjucsnaRZCD-9fZEzrzPJhSIyGICjXtDb-GCpon3lm1Cy9_B4FLkcU07GTMEuWhPsbJmAiw40-BVUiavzde72mAqhUvDGMRAzEhvxlPsPSntDGgluBQpFY8dQ3qTDjnPWuUBv_O3zbHoRmNXQyLycBq05-BGOPUclTnfeOQiOlW9W_X6n0HzGHv1IXkIh0TV-efMa4HE2SCfdXYo1i0_uW4cpz4gDeJmaz5_1w6cPo3cGPXoYZ43IlDQacKNsAKtD34TBO7juYCuAbjOe-MQpOJHSpc0qCTQ5RRHVX4vCBwINECeEy4DgltUkfdpYsc8gyvFdwAC_5rsw5k7r7trFwLT07bcFiEwpFrRu-SbIyd9XwncH7hrThGRrF4ENT18McGGBoS_4lIHSSSku8daAV7IZFqjqeHscjvn4TMVCgSBA37LRcABR8G82pqo4FuWGzOwUHXrW9J2gOUF_MrzSZcQF6aO_jPJsBF2v7R07pRfFGLj-b25BUELy6i2zr1pwP7sMFO1K_XgvxRSGiW3i6VPiqmTuAyWgx5R-MI6VC2lHeOl64zGg4LTL7UEj8WdqN7IojVJ2Tl1VqpwjViq605IxTzTLnPNKw2lk1JVH-YFZagOam5vV4HGwpvIu3STXSG42OpW1-8V7VMPZGQy2GFcnU_vX0AfobTo4n5B3Z5HBKbwifB1jYxtrKwfOzy2N9ODWzOv8kI9OrT8De4EUFLxc7TLp1BJ1izyktItDVvpc_d8n_Ggiaw65vKF23pDXxzOX1vGXxTbZJUi5tA-w43iLa9EfgkzWRc-fqlnhcFbS7Q-ZxfN_CViABsC1r1_WMwCiH_2w6IeWt8DHUnynr7GNchd7Mysom0wF2GOYRRGg1g5d0HHdld9nBBbJHCb-G_g6L9rL7Zp5FLBOLM42jYS7NPrVFIrMlHdj-ABmrBy2Qi0JeEa3FYW1mj1suv3hL_BBg4osicRJwdg9WJbUidfynSsBLoryBiWwWz7qYxv1YiNgjoDNAsARoFynnOBLSydHeTpyflPyQXZwNfRYTkhRnfNQEdUS2m9bqRonI2d0VFmjYZWWBB-8E8JAd4jNbbcx7jF6jBht1p-h-LYuYcb3PmiMFh_Ed4xgeRbWr_zhRmPRV_w-ehDSx22_NXGueOusCrVQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+            "format": "openai-responses-v1",
+            "id": "rs_0718931e9df7c10d016af8c1c5d71887d18ac4612e704fbb93",
+            "index": 1
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4556,
+    "completion_tokens": 70,
+    "total_tokens": 4626,
+    "cost": 0.00008083,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 4553,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00008083,
+      "upstream_inference_prompt_cost": 0.00004583,
+      "upstream_inference_completions_cost": 0.000035
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 53,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

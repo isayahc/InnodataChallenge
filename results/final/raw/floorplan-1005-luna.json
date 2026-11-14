@@ -1,0 +1,61 @@
+{
+  "id": "gen-1794687405-yUMEkkNMItMWmoHOd6DO",
+  "object": "chat.completion",
+  "created": 1794687405,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "message": {
+        "role": "assistant",
+        "content": "[{\"id\":\"door_count\",\"answer\":5}]",
+        "refusal": null,
+        "reasoning": "**Counting interior door openings**\n\nI’m analyzing the interior door openings. It looks like I need to identify the doors between the living and kitchen areas, and the bedroom, among others. I think there are five door openings in total based on their locations. I need to make sure the top door is indeed an interior door. Once I confirm that all are interiors, I'll prepare the output in JSON format.",
+        "reasoning_details": [
+          {
+            "type": "reasoning.summary",
+            "summary": "**Counting interior door openings**\n\nI’m analyzing the interior door openings. It looks like I need to identify the doors between the living and kitchen areas, and the bedroom, among others. I think there are five door openings in total based on their locations. I need to make sure the top door is indeed an interior door. Once I confirm that all are interiors, I'll prepare the output in JSON format.",
+            "format": "openai-responses-v1",
+            "index": 0
+          },
+          {
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABq-MGykha6JDffwMg3sjoKqjDA-tBcOuDR6tknvVF-3DNeRjxDLvPTgHrHjHDUzFbx3gmAjmsL7W4HZBA62nozPkgi9tKRaI0kLiEvNNSF2UWzOqqlBEptBq9dXFJm8QUWamR1rI0x1yGx5igSyr-5PUFepJS_P_VE5VYtSkTwG8k3f--uNHGyLNChuA6xNKkLfvjtZWbWpfom7N4G85oSJpScxlsoNcgjNemV40g_RSo9N4iqqDwmbKddx4dcknyD8H9i5tNfYdD1tm_GKpaZl52xeyyKMVvBTIu4WQENAmzUXTOJzB2RtG9YaTyjIAdeKbBSOoRAD6e6xJzwBXH_MPxUSIIG9OeHzBtedL3oCBjBYT-fCXOyJtYmwcdgyXX8VDGktdMbvE-BxBT0Fg9U82SwtVLe-WIsMHuna5MJKT6pPqd0zzQ-PC1ApPofebakGckBD2W_0y2BA-XlA0vyIl8C1RVHf6a5Vk5xf5xi04bHdcSq_fU28a2wxb2-D1fiuGOEBL-0YQBYDJRW4i_k7qPNw-kQw-e65AXPX7_YfMWEPBueyfryH3xR6Q1ZoBFul9txaRrLMY52bToNgnNQKWSB7VTRsBjH2FgUGY0NjG1tNIJOeSpia1vq6K99kJhTBR9f7Hn2HvY5aUXqDcGSk5IFlZHr1RBM74cTPPDZ8sjDgJyWVxpxUlEwb2AUMqiGUzDBWPwYSLIVI3I7yzZ-fQhZpGLNcCWeEibJc0ahuOTYd75F3GoEdZeH1N3FPehrZ05TkqCfG89aA-lHzIQshHJ313Azke4lAq5OU8zZE0SNtZRb0h2ASSR4GAFSxfaNiLMH-dMCvjIKGbGIzm_5ST74O8aP2h7ZDYS6bzFbSEScJaZcWTqmvdNzDExmwTt5Z2b2gPkxoq51j8d5_5MUhyjtnZiq18YJ9IZUD1DLPNeSf3BkYpeJy_az21emsaLwfuHZgn7HuJigx47EPbW_K-eLBqQAjUVkjWfuB1CpLQEfuCvXdx32BZPh2qsQzORZ_Er4nqYG9zd0KW6kOJsxnkQ2ONEVlVAkf14G58nqjimdY2S268KahFxwobYUFcnZTItRpXEQi7Nr4kXAMCy3YsRS78ejYjgrKel1IlYIhaAIACbxzhs6VppyY5QdNNEwoJE8yxVBIjWUD0zTZBRB8cIOw2TzrY6rPA9ejhsp1j4Ukl_weMj4FQUtqapYwk9oCmizU_R0MZvegLbQDyksKyftszIe2pLgPEcJd56BDlcqlNurAblOJdBAic4uwR6GBaEAeEFhYL1qMB7a4cIk0BsITMx3ULVJIkLF34LumhUOxPPJUniK8-2Km0-ttiNlTDcqQoUgIQhODLeRHFDgifF_VvzQo2itsAJxdnGCwI7-sYwXm-UY06n9ZHiIf7FoL1KzMc6zVE_bCxu8m2icKxsLexqVvClhJKDRrEUB7UxQm-TYGA2UHF_x-wTkaBHyb93ciww_qQqkZc1BEBufc9xKlbo85VBPjxBnp0bST9RD4G5rXCa2xv3hBCKRaYoutHrm5tDt9FQA9AYZaksMxbBgnZ_Vr6fG1kPZjK9-BG6P6ofx08H7kOO5WSSAq60-jEGyeBaueGt0TIzw68Z3p2QGyqWda0sITfIoMoNJq75RDa3By8oFup8wTA2tDDSOjL4kk9JruqPWjsa3tzR-mXbP0pmcRDMl-4QDuqdiZgYDG3hJWGvcI94tAgwz1xLCjCdnX1YxVPOj9LBwY4jM86JaTfFVfpHHb-u2LyOMVBTw6UxaNTvEq7to6D2IQ9yywg0h_fxmPCjDecZKpaPH7S4jwNzxlb5IcttiQEpb8udN5qbjCGke6zVbycX7C_eqHTj19G-3pgGWmP1eWLDi0gF_y4_H4qGwBEvsrbOXXCAL4pWzN3IDhC6fIe0mXS9ZvBGdool5lnwMHGILFDVEFKrpMVxbaRHCWrNszvTSdcXF1BxHb3l8p8EsuVgcW9NdvV0ZXpoCacPhPHNvcGu5XnE3pXX1HIOKZ3HTTXz322l6EjN43TXXsgmVEijQT-reGEAilPOaiEdXeJ3WrJz-ypQEnBSgOjZQA4QGvcJZ9A2x3vOcB009zfAD1oMest3e817ym4q5UW_B1vOpe-WdQpUGNU6Uz6eBpmI8ERgPTxta60y3lMgS7epBiz4PmPlJmrANkO2dxPKx1WVxXGu_rYb8r_Z7Kno_mC84p2745DCd0amCIcuRbKEinQMnaFWO7nGoWaxR4Sq4yDUMfT4F_j3CWhMfPT3_IBwzZWbUauOuGNz4oMLYBEZFpxb_gUaxAOkShHytrSGM27oc0KQZOf9PGCQ1ix79Uf-pE9F5phuDiZStlh6cSves_sZXlE1i-MIkkf0eaPT1In6k_FwooH-4oRUJNt2eggLnHdriPYE9QfOeJl9YFcS1viPBcThPsyswtkHdAgIp7-Sanufj8A6nMRwTNUTqzuDjPJpFCPmW_0JYiIp5gc5s14ReHjMtloiiEGp9CpYhQNtjNF0vpZfj_uysnzSXgZdff0sdzzY_rNlCGan1YpdgVZ7sZz1BZK4jTdoqg_gDJCdm9mf3tdHf94vY6Gx4VM2CHJR6Avu0bbDl1CQN6UhfpzorxkMvRxqza7lJ0tyKVd6W3m_S49Cz9wsspNVaA_QT_wPxaehES2lx7zXqSXNRwUmj3ky7h_ERBZ4tAFMDkHPx_4fMuqJLRxDdCI9_KkJNPuUEHr96lpmssff7FKAfr15LKf64JDwcBeylxCv-nsYCEcye5YPGATFW093-CCEuIMvU6R4F1Z_g_Cfn8_lAS68nppiHjys6n5TNr2iRc9EvLjLCFNYEhLtvQPGR8pYxUZ6s2aGPd1vHIOIOx0fdv2h32plyJPuvPF-gOip0n2xFTzhdJmoErjc5WFptOatJ1waWIBuGg4MlK6-1MbFy-Qmye6gO922KqutM1T9QOK4BF5TTWFqeYF-7PkJieJqUe49U4ZFjJPN9Gd0Eg-k0HC9GeRzMWetJZsj4EzsGnUWWcjjI8wMU_u3Ov4KHiDtbCoxPFKEpIis491jICFBOEAUnggXVtkrzYPZ5FryS49B7ghrQphYcKUaTeqHUge8neIDIHhcVCQM=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+            "format": "openai-responses-v1",
+            "id": "rs_0b607d140db49c6e016af8c1af44e487d1b7d841df59db29fc",
+            "index": 1
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3732,
+    "completion_tokens": 122,
+    "total_tokens": 3854,
+    "cost": 0.00009859,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 3729,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00009859,
+      "upstream_inference_prompt_cost": 0.00003759,
+      "upstream_inference_completions_cost": 0.000061
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 105,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

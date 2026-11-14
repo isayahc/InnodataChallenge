@@ -1,0 +1,20 @@
+[
+  {
+    "model": "anthropic/claude-opus-5.5",
+    "tasks": 10,
+    "completed": 10,
+    "errors": 0,
+    "correct": 10,
+    "incorrect": 0,
+    "accuracy": 1
+  },
+  {
+    "model": "openai/gpt-6-luna",
+    "tasks": 10,
+    "completed": 10,
+    "errors": 0,
+    "correct": 10,
+    "incorrect": 0,
+    "accuracy": 1
+  }
+]

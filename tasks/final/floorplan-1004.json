@@ -1,0 +1,109 @@
+{
+  "seed": 1004,
+  "generator_version": "partition-v1",
+  "floorplan": {
+    "width": 15,
+    "height": 13,
+    "rooms": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 3,
+        "height": 3,
+        "id": "R1",
+        "name": "Living room"
+      },
+      {
+        "x": 3,
+        "y": 0,
+        "width": 5,
+        "height": 3,
+        "id": "R2",
+        "name": "Kitchen"
+      },
+      {
+        "x": 8,
+        "y": 0,
+        "width": 7,
+        "height": 7,
+        "id": "R3",
+        "name": "Bedroom"
+      },
+      {
+        "x": 0,
+        "y": 3,
+        "width": 8,
+        "height": 4,
+        "id": "R4",
+        "name": "Bathroom"
+      },
+      {
+        "x": 0,
+        "y": 7,
+        "width": 15,
+        "height": 6,
+        "id": "R5",
+        "name": "Office"
+      }
+    ],
+    "doors": [
+      {
+        "from": "R3",
+        "to": "R4"
+      },
+      {
+        "from": "R2",
+        "to": "R4"
+      },
+      {
+        "from": "R3",
+        "to": "R5"
+      },
+      {
+        "from": "R1",
+        "to": "R4"
+      },
+      {
+        "from": "R4",
+        "to": "R5"
+      }
+    ]
+  },
+  "question": {
+    "id": "R2_R3_door",
+    "question": "Is there a direct door opening between rooms R2 and R3? Answer yes or no.",
+    "answer": "no",
+    "answer_type": "label"
+  },
+  "checks": {
+    "valid": true,
+    "geometry": true,
+    "errors": [],
+    "tasks": [
+      {
+        "id": "R2_R3_door",
+        "referenceMatches": true,
+        "recomputed": "no",
+        "labelsLegible": true,
+        "rendererConsistent": true,
+        "valid": true
+      }
+    ],
+    "note": "Programmatic geometry, reference and font-size checks. Human visual review remains separate."
+  },
+  "render": {
+    "renderer": "floorplan-svg-v1/resvg-js@2.6.2",
+    "engine": "@resvg/resvg-js",
+    "engineVersion": "2.6.2",
+    "font": "dejavu-fonts-ttf@2.37.3/DejaVuSansMono.ttf",
+    "fontSha256": "b4a6c3e4faab8773f4ff761d56451646409f29abedd68f05d38c2df667d3c582",
+    "width": 1640,
+    "height": 1440,
+    "pixelsPerMetre": 100,
+    "margin": 70,
+    "dpi": 96,
+    "systemFonts": false,
+    "svgSha256": "8f7a3a1b154894cd4f4e1e5ff691789f3322886517be9fc04a04b7a7fe2967a9",
+    "pngSha256": "d0d1d5fa5d93855602c5034b66e9ddcefa513e1460dbb8456f3161e7db7082d6"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "seed": 1006,
+  "generator_version": "partition-v1",
+  "floorplan": {
+    "width": 16,
+    "height": 13,
+    "rooms": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 16,
+        "height": 5,
+        "id": "R1",
+        "name": "Living room"
+      },
+      {
+        "x": 0,
+        "y": 5,
+        "width": 16,
+        "height": 5,
+        "id": "R2",
+        "name": "Kitchen"
+      },
+      {
+        "x": 0,
+        "y": 10,
+        "width": 5,
+        "height": 3,
+        "id": "R3",
+        "name": "Bedroom"
+      },
+      {
+        "x": 5,
+        "y": 10,
+        "width": 5,
+        "height": 3,
+        "id": "R4",
+        "name": "Bathroom"
+      },
+      {
+        "x": 10,
+        "y": 10,
+        "width": 3,
+        "height": 3,
+        "id": "R5",
+        "name": "Office"
+      },
+      {
+        "x": 13,
+        "y": 10,
+        "width": 3,
+        "height": 3,
+        "id": "R6",
+        "name": "Study"
+      }
+    ],
+    "doors": [
+      {
+        "from": "R5",
+        "to": "R6"
+      },
+      {
+        "from": "R2",
+        "to": "R3"
+      },
+      {
+        "from": "R2",
+        "to": "R6"
+      },
+      {
+        "from": "R2",
+        "to": "R4"
+      },
+      {
+        "from": "R1",
+        "to": "R2"
+      }
+    ]
+  },
+  "question": {
+    "id": "R5_width",
+    "question": "What is the labelled width (W) of room R5, in metres?",
+    "answer": 3,
+    "answer_type": "integer"
+  },
+  "checks": {
+    "valid": true,
+    "geometry": true,
+    "errors": [],
+    "tasks": [
+      {
+        "id": "R5_width",
+        "referenceMatches": true,
+        "recomputed": 3,
+        "labelsLegible": true,
+        "rendererConsistent": true,
+        "valid": true
+      }
+    ],
+    "note": "Programmatic geometry, reference and font-size checks. Human visual review remains separate."
+  },
+  "render": {
+    "renderer": "floorplan-svg-v1/resvg-js@2.6.2",
+    "engine": "@resvg/resvg-js",
+    "engineVersion": "2.6.2",
+    "font": "dejavu-fonts-ttf@2.37.3/DejaVuSansMono.ttf",
+    "fontSha256": "b4a6c3e4faab8773f4ff761d56451646409f29abedd68f05d38c2df667d3c582",
+    "width": 1740,
+    "height": 1440,
+    "pixelsPerMetre": 100,
+    "margin": 70,
+    "dpi": 96,
+    "systemFonts": false,
+    "svgSha256": "1f98769e40b2925f09a7b2c1021ecbac144f60a8659ce167d45495f2bb065470",
+    "pngSha256": "6cf0c6b6ac884cd5363141f636a15ef2918eb2efd7e46432748790d984d8cd18"
+  }
+}

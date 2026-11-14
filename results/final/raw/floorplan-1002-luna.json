@@ -1,0 +1,61 @@
+{
+  "id": "gen-1794687385-LWVcWLh50jyYNLcys0uC",
+  "object": "chat.completion",
+  "created": 1794687385,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "message": {
+        "role": "assistant",
+        "content": "[{\"id\":\"door_count\",\"answer\":6}]",
+        "refusal": null,
+        "reasoning": "**Counting Door Openings**\n\nI need to count the interior door openings in a space and interpret the arcs. There are some doors like R1-R2 at one vertical wall, R2-R3 at the upper doorway, R3-R4, and R3-R5 in the horizontal wall. I'll only consider the interior doors and exclude any exterior openings. I'll label and count the connections: R1-R2 (1), R2-R3 (2), R3-R4 (3), and R3-R5 (4). It looks like R5 connects to outside areas, but I need to focus on the interior layout. I’ll map everything accordingly!**Counting Interior Doorways**\n\nI'm analyzing the opening arcs on the left wall, which goes from x780 to 870, possibly leading into R2. On the right wall at x1269, there's a door opening to R4. So it looks like there are two more interior doors connecting the office to the kitchen. The regions for R2 and R4 are x570-870 and x1270-1770, respectively. I've counted the doorways: R1/R2, R2/R3, R3/R4, and R3/R5, totaling six confirmed interior doorways.",
+        "reasoning_details": [
+          {
+            "type": "reasoning.summary",
+            "summary": "**Counting Door Openings**\n\nI need to count the interior door openings in a space and interpret the arcs. There are some doors like R1-R2 at one vertical wall, R2-R3 at the upper doorway, R3-R4, and R3-R5 in the horizontal wall. I'll only consider the interior doors and exclude any exterior openings. I'll label and count the connections: R1-R2 (1), R2-R3 (2), R3-R4 (3), and R3-R5 (4). It looks like R5 connects to outside areas, but I need to focus on the interior layout. I’ll map everything accordingly!**Counting Interior Doorways**\n\nI'm analyzing the opening arcs on the left wall, which goes from x780 to 870, possibly leading into R2. On the right wall at x1269, there's a door opening to R4. So it looks like there are two more interior doors connecting the office to the kitchen. The regions for R2 and R4 are x570-870 and x1270-1770, respectively. I've counted the doorways: R1/R2, R2/R3, R3/R4, and R3/R5, totaling six confirmed interior doorways.",
+            "format": "openai-responses-v1",
+            "index": 0
+          },
+          {
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABq-MGg5JgzZVKBUsV0PX1cxL9vA4f-cFvbqAv6Gp9L8hoEqubiR8JfHnbeBjNFIaJwck2JEZINjVpZU1fRozhMfIrB_IFXLFGPy5w7EWG4oOzWfOB1iGeNNUrUmPFBX6pzV6Z0vEu1zm3C0W6v2ggjtk06CMo5SQodGx2QA5qtQUfyQGx7HcJ3SWOZ3V-HwMYf7Qm6cqQ3tB5CXf5EF3MtNhwNIalys1SOnGe1uInJyi6d0XGvWZzVzHt1-kUskHZUGCQuXBvJAQ-QVAPHcrTJT3lHYRfWu5Arp2PLoi9-Vh--cC73pkF9nHJcHZiVcV_xt3z8os-rrx95V9qy_3u_KIYpwBKgeA07wamxXMYQNr25KcF6lLHIyRbZNYbV0G5GGYmdT7xn1D76cVLpp7FPtN2buzwBnzTmJgw8SQY8Rv6_B0XjC9yoOG34Tpoh5dA9iRr_sz_5K2UqYT4qCdqbeHF2ZWqhCsnuGbNTpH1PLPsMT_CR1SHuiL8qW6TWzMBPdEqYG0tntDa7XLzXx1M7KGf_dcOjufG4jHT-U4v-lc6_Texcgxga2vu-aOyrTWD45rGPShR6O64EzPKIenm7M_F7Fc60grRhsZ_Nkjttmb8b5IufliX-E6IACdjIImbcHM5mspAot1A7Td-xKiVaI8XAQVtzVA6BbF4XD4UOMNMNM2hSX23agYGqbphHoj6DBrDNrgDAqsFFZD2-mg0q1d0WoRQ13XeRrYLThI_bC8P7NFS48lsRQvl4ts2I5gjPoi_yWw8akG_vDilmxOR6ICJ5dTLQeTpkTeVUaeK5Plqz8pB_UGMs3iihTEdLKLYR_ildd2L0QUC5-ESvw6klx8l_FUS860tMLbBTyA7IJt8dlADPJ0bQNIUO7S0dhoWfWoIglykF4Lsqy3TQGjDjVLxwZc7MzoEd5rQaRO_o_23NJRULWxsh6BhxJLy8eDg6bU7fXyCQ5932CPLdXqfH4PV90aYEiWr5X0Mlc5QqLmvaWqdDi9OG3rPJOO4w5c_i0PzIJt-Po_PuU8yQPkWsM_drufat87alvv30U4y6jchNCL4_Edabh2u5eVBzzVrXaf7ZXZPsm3ETnyiCmDmmYNMuHeZsO7v7uLguGMwKmkVHqhDnkFHS-mGAp53Mqt0HAxg4vdWu8sYhOXHe2Q8cCsyysCW2BHOrLwZGomh05Pn7R8NiHVeb1_zT8q_eR-neLTaUzm8XSgSKqzdAY8qUtBUIJHjA3rNEkQtMU5WSOOwjWSPKxe3pYkmHVuabjGaxSQGNTpKKeTJ7nwcmpfM2Nnf-P0XgI0QZm_So0e7Y5AkiPdQvk13dOdW-W2KzhQTbLePU7z9BqcVyxi-6MsvVyhU5ToZEuG9s5ekU0yDq5INdvi6px-8rJ_-dOfHJ1U7SGvtXmUW0bEwZu5JnS6SCl0Z3A9mj_MN2seniez8y4cndd7CGpxXGS9gl96kpjgTwngzb8f3d927R9HBF6fX4SVIxn41rqd_1aw2SzcN313dl33K9LpIg9sSxpMTfbEqTrYG0l3hDoAKb9GKv2iZisJItH1XqGMGXQZpVWp687kNsndiUMhjIHy8ouAGjVT6pUcGrjCUJGUDKNXZYgfSTo1NhgKME1eeq_aYKK9mLQWFqioAXlAwFJ4dXwm4s1knMwMfhIN_Fb0n9ktqj5UM5qXRjoZwE8zZ6GLTra4Z_FpXIDwpDwRaccYcrhSdCorJfPnc0iUUy4QMjiGMFP6MEYs2LBXk9Db1qzBhN5e39KT6JGRc1izvmOxI7CTxsIDf0vgppjAfQVfkdmITMqaLWnhk4oCbxtCaz-CVDFLUSmVlQRTbR-gfbrmQZP-750xgx94tj1BJhEx6KnrJVFphBYVIuPgRynV1pDzI-y7HWg5f8bTv7_74_Sksd-IAsAbsLsywCZr4bSMG6sfdrw2A7Lz5m44rVRbcMhN08jWybUnBrg7num0rzOyKLM4CVi2B_-h7BhpcQRdGmUrwJAKikjNuZG0hNj-wizaaIA4nHPxhXfx8NYIsN_Y7mUVWJ0gcxhFB-AdVEiexeDATNuk5XphxrhQjTYAdqtJkVJTWYvGW810iV0g1boSbiJQbRsMh9vzKT-58re8A_qTL6eAFVN_s2e05YUIeuHBIZhNu3O80jaK1szyL6l5rf_paTIgYxP_P8dwiYtnmfmXO0f9xgm5-H6BmnUhVqq_kgOJ5frQiLza0ZPAC2Exxf_EYL6hoQd29qV_JR4vBUc_Y8GZmsSJjP-yWIJgmlMs7X0UgSDlXAWdY6bPPvYth-lGit9XtOJNzFFKzCSiK9ivqmx9dS_My4Afq5r70R6pvVk8HJ7fBmqNuTR4VRoJar84gVaki9XFHA6naaHJXo57oYJGk5hsvJI1A08G8UtqhKMAl1Jh4IE0HXcT512zj0XDSkdqu-t75rzNRYj5XqzWHD-_jxnoAbTZ8EyozZkyUd8r8WNVbku5_I-uqBUU2PcPlQdMnxPN3CbP9mGThCmMdw-boVKfBIHvzqBO_6-if6r-LHSzC3uQOpZPjQaLtdJej-6nJDca_o-1oCilEQnif22wl06e6mkJq6618OTPq41QPy6PcU01PRfMnZ9fXusfHumNUsRHv8gBKRFCyjpJCRd9MAGyem76b42iUXkSzmruvE9Oy_cAV8LKZaO1L5utchV7zjqeliqtm-9H0idbDLXko3zXMVW2gW7U3bnsZnOdUvh52uouExGMSLgNis2ouWwWgvpixouTtw9VeNabL2KltAiGM2hQYAkahvQgz1ayNqUkzkCrAKsw036JZ72TWwqmmDX1yPAGobOGrO28xKbLzA3D69LnvEK4hM_00JRmxfi_DienyZGJYfsSOqWZWYckqfz3Y7Z2OvtAVbchztG3dXcCqFdwR5eg_4_Exzb5sn_hkxwYJrSWjBCl9mZbmJJoPhAb0wpVydj-Rt8F0W0Wf69fXJU_aMiBMoDh86z-kWQNTeluAKlvLxSWLyCHH8V2f2Kcal1P7YSYNGBD9kvIpsDJz25U8FfV7v77L3Sn7L4WJp9BNWKbzWsUmtJgPrD46CiVasH5RHMQT8cYA0Ju5FV5Q1ENFnDHjzYFe9SMOCq63jAfnk_xjqUFgnWwL2GaSjof1RjOFk3AVLMlrmEnPkbAyqowZxlGavLovRLT-vu8mw1eCDSBRRkKYm6F9XupQmx0Ui9wvtkkJyOcZc2Z6kQeoY_4Q-VLGzBrrls-bymWJgTM-aAkr1cVXwFfPxYi5osqHDEceWGJu0JqHvfEOamHSZORQOsahKT9wblw55aXQxGqjV9i8o2-QP4JrFuCswac4VZ2V5fU-31gWySwRmjTopgRUypOaR667PD5UCZj_vA3SKRgcKN9qKMY4pnzYl_1AQ860qi-ep87R2LmsRFEmFv9VFUZGspbb2yrddVMWMMl2g7k2rlJbrMSCKdU-YjzYXCseFm9vSb3gbTNF5Bp7q0amt-vrBH7a4xOLzfFGNTF5fZMDEzl2BW3RNbwhDFwxU4ogmMzJ9dJOg28y-kttJvI7B9FgMMo1YAS-iztCOjWx9yNH2PV58OXLpG4gTB1qkpBDexMIyOqRpfFOWHYKcEju8PPVZk5yzIPnCfoTJrMAOEcl0gGYHe3aRq3bmrB4_imXjtScHT2Lwttb9NsfTFn5whnVRBxPe1l0zy9Tw_Ncy8XFUPbHcfiyFjlPKxe8srUcMcFwyWQk1lG2W62P1aKiYHSkFPpzVhNLvjOS8ptzT8F7_L03felMXPfO_RdGzEtZj8e8iZZVEJjVHgc39p5NE0Hl9MpEaViq3u5uHd7C0xK8tPNj-ynMJWMpvvw75Pmo8gb0aGJ67FySgZiFZSZ60jF1NEIbCjud4GoJMXUbNoOv6KyoJ0ohvcnDM_7vt8AQASUdCNT8eWnJlbWTVnae6QgpqOUCsStNPdorapIjzCHk3eG0Ehu7GivFPPB-yYU4ymMxMIgqSJ8QowmJPkQOsx7jqkokDlY98BM-Cixhdy_f43Uyxd0_bB8CLuK80j1qTIbgsuuh1pNsZQUmU62PclKTJNOM2UTlubQfpKfkNxAS6N8SFDoibYKPBb8t7q2o2mcE_sk-rfL1ZLql_TsMxs7eaEr2yJEoyJqn1VYrRf-BoKI_zedLeed0V_5ZHzAyPo8hHVxoR0iYUKtCZxbEFgB8Eu1h_KbccCETcLk0q2PGbejO102fWAq2ejtdsmomu0ua6hVSCRRnsEk8nYs0MoINJjPPCgnCzCUAM975xh6qjbjooj0v4Cu552-Pkimg45jTHRKKcq4k-Wyr0UuNDQBPwkTczbYsm4AJmVn8gByM1odQIqX_-9YnSVMCzPsJUiAKaSae9sLGVy9dHM-1JTvVmdUCE8iR9xL1fNaB97bAw6GnKcHoTLPQyhLbjarGnG4V1lnVLnk1Myz7YBOWHF45WT3f_QmBQ_IAcePlqdLnrilJQMy5NewYdXMeNv6AVj1KE7m9ju1JI2i1vFEO-F07sMiNA7Px8Y0BFVDSXmPHy9__w5G1q-0067jPMjoWiUgaIH6s7gg06NVVhWq1xaWYBmzL0B4y-QX0TVfER-K5cN46gX1NS6GjtPh9J1Qp84cHwMthvY_hsOmROE5cbRlYRZt1d_HWzpj2_JqBPvy6PVFIsxsyKnmlijWAuoE48tY7999EVRrxdjpxqQjVOKjTX9_0UWgXZvNHiVpbQKBSYxdn9hvMu0-NvMbr3t1Q4--cVUqCTIJQAgbUec2eiM_NVzXQV1CvH9rMLXGOg7aApzQvP7z57vdWCCiIVGD3l2UiiJ9LVewDsuoJ0S9YffgqwXyMxBuJR0d3rcZkCTtm7v9qTrjOE4CWoqpijVWyAAV021xc-3_0dkz7qASm5K7u-n_s4t98G9h0_7dKWx_SMqoYAsxf7GXtNfinth0p34Rej84bIjAh5Bv89b8-9COAjOTpzLII-0OkXLebSj_Vpf4H5H0ScUPDSrlHbA1_zFMDkAuqWJvWsgRHyGU6gXhwQE2ZExBouC4h09LEeD7TMtC57rKktB9SBgMF25X3YRBqa2i32Um9kR9e-azf-ff6YxkQp8zeatET0TWaR1Kedtt2UWWOU1JvlCNX8Fn5dvJaYN8H9l6OoM0bhdYrCHbC5_95Bo4Ac70es3xOYaJK22x2hyjqaZDoLeFUrNQQ5jEPxsA1EgKJ-01Vj3G0CYlOR9jhDv8jAwEDvmGFuuN8eZKqY1cwDe6bYuXeUTYrEGqmE0xVYC8WmsQHhM85CMbMbJgzxdrFqfhWywceZ2v7-6fOLFSJ_wWoooJGCxsT6HwPWsAy1QdvNvgqhkg9rjrYazTgpGpMzueQtehVQVs63hAKz2ifJnEv9xOhhxsLOPtHmBg1yAzCBTGkrJeCer5aqvu6vp3D1Wk46WnVRKIbH32mAMYDBI7LGc7aaUFXIyyLpTks_zCGEDJfOhL5isuRtkA7npkxJLyMhUtREyX8OZlXojqSoEX_1q6vMtuUghsOQgFPOH0N6AUQpkN9ia96gGjvHqUXGtdV_plKlY78qo7Z0_Cf6FBEZLL4CNdjp_ppfYC_q8EPhW-nSFsbrOJfEHWaxk9AKFwBF4tInCla4SsBpAPYa7WO3DF2U2PxWpT-0krvj8JOe2KSd2ej6-jaErnj6su3t7-PBcbQM5XXznLfFR32CKBw7z3YylVEuszQuLqdXXP-oRMaKfAfyuZlWzUaqBITkJbE-RhaIeQ3MB6K7t44cuVlRovogP42BBJozeARdcXyK-jp9dvCxCDOoY8yX9pD0ywwJgqP7hVDBSbq3M84xwWQkxnoqkk5_5JZncAsyLvAWzl_D1CUn-SiQ_oGeJmNLqS4aBW4m_aeDrawHSkedvasUDI_eYLowNlQlFTRrbyStcJNrDUYpzJhh-T7XuOVbolkru830ghwVkvg0r3QfKRG7wLllBchqdZGHKfHeSsi0wnnZUvrhju41VmlzpmEvArcPQroTtSC2y9kV55f6zpkG-bdCaKrJOL05YucWdIztFZaMhoZO-cBiKiKh4nzk4ypGO322XLbCmxZ6VsFPvAtYs3ntqFPGU_Nsw6RLO3yRTJjzznc0krWnjJhQrNezUShosglfCLdeuLNc24QN5ydAjY7VIeL3w4RlRQaz5lAITyaQ69fwh1m6CWwt0l39o8L1WtKup-Yort3fPSfNCe2pxrmR.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+            "format": "openai-responses-v1",
+            "id": "rs_0d346be2ead58c8e016af8c19a657087d19fd1ea639bf2f8b8",
+            "index": 1
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3721,
+    "completion_tokens": 414,
+    "total_tokens": 4135,
+    "cost": 0.00024448,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 3718,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00024448,
+      "upstream_inference_prompt_cost": 0.00003748,
+      "upstream_inference_completions_cost": 0.000207
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 397,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

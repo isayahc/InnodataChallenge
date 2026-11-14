@@ -1,0 +1,61 @@
+{
+  "id": "gen-1794687373-y3XnSkmkBKzEglo4iR8I",
+  "object": "chat.completion",
+  "created": 1794687373,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "message": {
+        "role": "assistant",
+        "content": "[{\"id\":\"R3_R2_door\",\"answer\":\"yes\"}]",
+        "refusal": null,
+        "reasoning": "**Inspecting boundaries and openings**\n\nI need to inspect R3 and R2's direct door. The shared boundary is horizontal, and I see there's an arc opening in the wall between R2 and R3. It seems straightforward, but I should ensure that I've assessed everything properly before making any decisions. I want to make sure I show a clear output, so I’ll double-check the measurements and details before finalizing anything.",
+        "reasoning_details": [
+          {
+            "type": "reasoning.summary",
+            "summary": "**Inspecting boundaries and openings**\n\nI need to inspect R3 and R2's direct door. The shared boundary is horizontal, and I see there's an arc opening in the wall between R2 and R3. It seems straightforward, but I should ensure that I've assessed everything properly before making any decisions. I want to make sure I show a clear output, so I’ll double-check the measurements and details before finalizing anything.",
+            "format": "openai-responses-v1",
+            "index": 0
+          },
+          {
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABq-MGVqDNPOoBWqI9fKn22jc0yXBRi18DnArJZuAVqk2jcpt1uXdTGLe9L7_iLmi-Bf-BuIgDlk25S_Xg7JFiC7Zs0oaoa3bsX9hesvUhhdqoJnx4LRRiezv7x4wPGYl1VrXaiYYWmqGMagGEn8Ifojf3xDjZdi_F4PiPeLWepkBHLGt-w_kphsOb2qvmkgUcM_qVXWmpaCHLH3lttT5N4JkZHf-B1Emzh5B6D8nHVSroR6c8s7pVz60xSMgcAchsNSMryCmUR0ote1t1--VAvUUZpWD-_RQqj0vAL7aNzK3Fm7DsqVb1NeXaT98Lis4MFfD-cjInD36bpqQpubDg65nvLoAIizPG4sOc41krjw_dJql9Qz4PoU3MFAfCMUJqxrhwm9xEqIVMxkrfgcyY4eXV7tD3fiLG5B-M8JFtsoJsqDeLUUU88fuYs5HcK4uqYckxxTnrNUjH2mB1dvAwG0sElgWRd08AiKZtnomiEw-tn4wHXn0zrTArXIZ2pwk-ksGThJbk3OscvWmPcEKDJn5JnQfXPGPWo5HhOfrycO6gBIQ8vGOmK4ZkZpW6CaMZ_yhpkGD9s_7oNhmj-zwjVMYri2l6nJiZA3nzUJ15Utrc4-CAyg67CTTFc7UcPLbSN7qWh7l-xvI9lgg8Xg317rAG9jjMA07O6w9cE4dYeBCU1vWqg8JVQ95OeTv2-cpRQcJ0cgv6h1iUafJuvV7zwXhGSvEkhxe2_K58ZOnc7ZUiBkmWIzXC0gF08-rrT3teiocatXbgo5CNFSjjnmIFLXii8LsAOdyuB8h_hsVifdTtF9A7RfcJYimvOfTxyN7mGZvnbFiLswbaKaSDGgnnzi8f0e4Ji1AHsbmk0AGpDq6uFvcCrDnOsptteQ_pVw9kkJ9BhXeBTVIKJfP1NM-79o7fXfMHGvECUMWG_MDNCxfpdeDxW6_id7pQoVyDi4uKsRPCd-QQg8vKXgNSaL5EPzKymtLUeF2X21MMEh040tKNjnegPeYDmPR8T8nTO-NvoQWRM-1hHHXJPYiXtMKEJe_FBJH_uD5gzvpioyh-WBLOOLg74zvRPVInMUwS_21tHro4tu5xmmbkSjOUk8ggjnCSc-8JGWWlv9o92ISKfMfUcoTCW4gRH0ocl5XrGV88yd98sEA7629BFUHJKO56lDB__zv_IvMhZETgzCEAoiLQH3GyXjJL8PJrwyQP8EQYDp8oO-a7XODU572eooDpsQLAspSCBhNhY-2Njs4HRwIk1XPBdfQa_f5_VHTjq4CvX1ZfdbBLxmwW4jRM1ju4lKLPDvb89tH8Akxdnsj08XGFL9mhIfxdeMTo4kGJugfmxMzC2MevWPq-RF92wT3dJo6uLFoggVPKpuR6p2mT0LpWIkp8eloStilYpry9LTC4WvPIt20bicJ4RP9uOFfa0S3Z7KRqf0x1oMLzYplNH_GpuBdpKitklBvpptTDVz9Kpxt7c9Rg5atchczwu5rmmg5PRElUUDMrKnHMXXx32jkdSRwXWpJG6FIORKxNR19pfa64cf9zqPdQoYkYr3PZ-LiKIUzHBgGDKQXNIrIqS-votkYKAo5o0uX2oq03eTwHzSSS_MELRc_7mRtQ7Nf0L_Wx_dgGBoFPSdnA2JWW2dTxoSDsLSTvaQZsKpigHVlMo6I0MK8GjGQ185xNGWG4JX8sdfas3WMCHldLdnZWkBHUGVar5wBVQEzfAbNafjXGxoZty6hgCfFOS9E4_LGmkf-4w2nGoGraKwdYqInHeuQYuEOpQEAlFDo18N93QFeJANZpthYD8ouxOz1Z1tLT3X-jcvzTGA8wldizXcaL3TxVANFzAU3OC9Ay08MHya4GWNhHdtV1pye7Hi3jemPz5fYOLsCKsun8nZJYZrzwZRfedt8Huxz6qc3oHnLhKzn0W7RtikHZSG9XoYvX4D6KvkaBfE9v8ACS-au7mrRGvzB4IcVUTm6l2itmzzkhA6tj13v3JLkcNQAK57CWjKU-YUziVMYr3ucFnpLu62rA3PkKYKK8HiLDjGM_efQ2F5SiNbT3v-D96EVWvIpN-P0IA6mhFkfLd0qtpN9A7vMMihbzQdZdiMRI9Dekw3Sy1h1NSh87ASk3yu2mYrBkV73zxFaT9BjVNXseV-UylQ2lAGBwX5Yyl2w6YBV_lh2bIt--fQB78qR1h8mBZj135-6GYQpaSIg==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+            "format": "openai-responses-v1",
+            "id": "rs_0b1a551eadd6d9db016af8c193dd4887d1b65aa8dea9cb2aa4",
+            "index": 1
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2763,
+    "completion_tokens": 56,
+    "total_tokens": 2819,
+    "cost": 0.0000559,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 2760,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0000559,
+      "upstream_inference_prompt_cost": 0.0000279,
+      "upstream_inference_completions_cost": 0.000028
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 34,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

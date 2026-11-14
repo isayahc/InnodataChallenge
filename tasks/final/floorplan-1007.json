@@ -1,0 +1,93 @@
+{
+  "seed": 1007,
+  "generator_version": "partition-v1",
+  "floorplan": {
+    "width": 20,
+    "height": 13,
+    "rooms": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 5,
+        "height": 3,
+        "id": "R1",
+        "name": "Living room"
+      },
+      {
+        "x": 5,
+        "y": 0,
+        "width": 15,
+        "height": 3,
+        "id": "R2",
+        "name": "Kitchen"
+      },
+      {
+        "x": 0,
+        "y": 3,
+        "width": 5,
+        "height": 10,
+        "id": "R3",
+        "name": "Bedroom"
+      },
+      {
+        "x": 5,
+        "y": 3,
+        "width": 15,
+        "height": 10,
+        "id": "R4",
+        "name": "Bathroom"
+      }
+    ],
+    "doors": [
+      {
+        "from": "R1",
+        "to": "R3"
+      },
+      {
+        "from": "R2",
+        "to": "R4"
+      },
+      {
+        "from": "R1",
+        "to": "R2"
+      }
+    ]
+  },
+  "question": {
+    "id": "R4_R2_door",
+    "question": "Is there a direct door opening between rooms R4 and R2? Answer yes or no.",
+    "answer": "yes",
+    "answer_type": "label"
+  },
+  "checks": {
+    "valid": true,
+    "geometry": true,
+    "errors": [],
+    "tasks": [
+      {
+        "id": "R4_R2_door",
+        "referenceMatches": true,
+        "recomputed": "yes",
+        "labelsLegible": true,
+        "rendererConsistent": true,
+        "valid": true
+      }
+    ],
+    "note": "Programmatic geometry, reference and font-size checks. Human visual review remains separate."
+  },
+  "render": {
+    "renderer": "floorplan-svg-v1/resvg-js@2.6.2",
+    "engine": "@resvg/resvg-js",
+    "engineVersion": "2.6.2",
+    "font": "dejavu-fonts-ttf@2.37.3/DejaVuSansMono.ttf",
+    "fontSha256": "b4a6c3e4faab8773f4ff761d56451646409f29abedd68f05d38c2df667d3c582",
+    "width": 2140,
+    "height": 1440,
+    "pixelsPerMetre": 100,
+    "margin": 70,
+    "dpi": 96,
+    "systemFonts": false,
+    "svgSha256": "fd480dd7fd0128feef2e5bfcac2934a9094a9a3c39347430a9e4f7fafff2d151",
+    "pngSha256": "d384cd788b7c8d8d95681d1ecd343a87ffb23a765af85d6c2d70a76bb49edd74"
+  }
+}

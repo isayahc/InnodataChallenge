@@ -1,0 +1,22 @@
+{
+  "models": [
+    "anthropic/claude-opus-5.5",
+    "openai/gpt-6-luna"
+  ],
+  "temperature": 0,
+  "max_tokens": 4096,
+  "prompt_template": "Use ONLY the attached floorplan image to answer the questions. Do not infer what the designer intended.\nReturn ONLY a JSON array of {\"id\":\"question ID\",\"answer\":number|string|null}.\nUse numeric JSON values for counts and dimensions, \"yes\" or \"no\" for connectivity, and null if unreadable.\nAnswer each ID exactly once. Do not include markdown or explanations.",
+  "generator_version": "partition-v1",
+  "seeds": [
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010
+  ]
+}

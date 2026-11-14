@@ -9,6 +9,7 @@
 # Logs
 node_modules/
 outputs/
+submission-run/
 *.sqlite
 *.sqlite-shm
 *.sqlite-wal

@@ -1,0 +1,55 @@
+{
+  "id": "gen-1794687396-rkOGmIK0mZtIIeSrorqX",
+  "object": "chat.completion",
+  "created": 1794687396,
+  "model": "anthropic/claude-opus-5.5",
+  "provider": "Claude Platform on AWS",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "end_turn",
+      "message": {
+        "role": "assistant",
+        "content": "[{\"id\":\"R2_R3_door\",\"answer\":\"no\"}]",
+        "refusal": null,
+        "reasoning": "I'm checking whether there's a door in the shared wall between R2 and R3. The wall is solid along that stretch, and the only door nearby sits between R4 and R3, so there's no connection there.\n\n",
+        "reasoning_details": [
+          {
+            "type": "reasoning.text",
+            "text": "I'm checking whether there's a door in the shared wall between R2 and R3. The wall is solid along that stretch, and the only door nearby sits between R4 and R3, so there's no connection there.\n\n",
+            "format": "anthropic-claude-v1",
+            "index": 0,
+            "signature": "CAQS+wUKEAgTGAI4AUIIdGhpbmtpbmcSDH9VjZwGJ0Wr9qWG6RoMQ7wfWofy3U3BTHn9IjAyCTeuqsZTKG7JUHMAJjNF+jS3B7hF63hf8kRd2zDjdauvHl6M8BrBqbpR85R8g+sqmAUtL7O3n1ymX1GnPg8A2kjOmVnBBIaSEU2Z5uokI13FXTVMNegyYVahU05F5twJ8Bzp2lG2le5XV/jEyuNMro9ocM/L11CCtRAdLJQRbX2IDKazlvg5zRVv+yYfRwmHLXq+AzYQlOvhaJeh1kW3fPgEXH/8CLeqBsLnUjmcYKDdLKcbAbEgSnxRdmHxic5ch4mpEcvUqQ+rsIbBokGoz8PG3AMZJhPrc+BAFGWZdKlwObziQVk8lD7bfwyk8SjCb57zxfeQ9WKTtxqKW9QqazCzWCaHs7iSxEQtRo5ntlhG/kKruEZxUXktCEe0zmty58t669FNGx9xe9453aUfClX/5doufxeb24ZssD4Nf0QlTmO748sbqd0BBrYrpdQLMsEqrbS/mKi2/mpI+gicibfs/ighI8Aep6Dwkv85NKngy4a+/384RBa/uY0wKDxTDey1Kj7uREiOcnMRUx2TApKr8C3kIW6fJiuKixHnWsVFq02cGVqjNbRK7AqyOHkrcTWcDrsqENBI2VuoVUwEgq5+vZBzpweMg+PzoJPff862jVagBsA1hdA8zN5oucO2t9I91Zdpra5nchN/Ythf74Um4zxowL/F8BT+nl823yA0MQ7ZBvkf9V6BrrJgNwAtGHWRquBivjzqFFjHdd1Xq7bEeOQEsxGl2gP880u7bsCqZScLHofBGeR0eENX8sR211TShHTnnnGsxxKhhWeAzpQMaO6qGraE4skbKmw/8jlNAkKF36GvFCo99tqVSlkr2+Rbb83MOeNBz5t266HbEVEHQPg53ix96Jhp6Va+AwQ8GXJ0dFGeAvVUrJ0ANhhCrQ60tfOviPACYiEZera/ygJf1LvhFIS26q/wEPXG9Ez7twk5NukgcUtqGAE=.eyJlbmRwb2ludF9zbHVnIjoiYW50aHJvcGljL2NsYXVkZS1vcHVzLTUuNS0yMDI2MDkyMXxjbGF1ZGUtb24tYXdzIn0"
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3261,
+    "completion_tokens": 91,
+    "total_tokens": 3352,
+    "cost": 0.014864,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.014864,
+      "upstream_inference_prompt_cost": 0.013044,
+      "upstream_inference_completions_cost": 0.00182
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 67,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}
