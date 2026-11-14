@@ -7,6 +7,10 @@ export async function generateFloorplan(host: Host, pastJobs: unknown = [], feed
 living space, a kitchen, a bedroom and optionally a bathroom, office or other rooms.
 Tile a rectangular footprint completely with no overlap. Use integer metre dimensions,
 varied room sizes and partition arrangements, and a connected set of interior doors.
+Construct the tiling by starting with one footprint rectangle and repeatedly splitting ONE
+existing rectangle into TWO non-overlapping rectangles along an integer cut. Replace the
+parent with its children each time. This preserves area and coverage automatically.
+Only add doors after checking that room edges coincide over a positive-length segment.
 Do not default to four equal squares in a 2x2 grid. Explore layouts unlike past jobs:
 vary room count, wall positions, unequal sizes, T-junctions, strips and door connectivity.
 Renaming rooms or scaling/rotating/mirroring a previous layout is not a new example.

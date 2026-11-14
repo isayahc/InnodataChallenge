@@ -22,13 +22,18 @@ export function dashboardHandler(history: History) {
       if (request.method === "GET") {
         if (url.pathname === "/api/jobs") return json({ totals: history.cumulative(), modelMetrics: history.modelMetrics(),
           jobs: history.metrics().map(j => ({ ...j, modelMetrics: history.modelMetrics(j.job_id) })) });
-        const detail = url.pathname.match(/^\/api\/jobs\/([^/]+)(?:\/(image|floorplan))?$/);
+        const detail = url.pathname.match(/^\/api\/jobs\/([^/]+)(?:\/(image|floorplan|svg))?$/);
         if (detail) {
           const id = decodeURIComponent(detail[1]!);
           if (!history.metrics(id)) return json({ error: "Job not found" }, 404);
           if (!detail[2]) return json(history.job(id));
           const dir = await directory(id);
           if (!dir) return json({ error: "Artifacts are unavailable for this job" }, 404);
+          if (detail[2] === "svg") {
+            const file = Bun.file(join(dir, "floorplan.svg"));
+            return await file.exists() ? new Response(file, { headers: { "Content-Type": "image/svg+xml", "X-Content-Type-Options": "nosniff" } })
+              : json({ error: "SVG unavailable for this job" }, 404);
+          }
           if (detail[2] === "floorplan") {
             const file = Bun.file(join(dir, "floorplan.json"));
             return await file.exists() ? json(await file.json()) : json({ error: "Floorplan not generated" }, 404);

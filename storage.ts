@@ -121,13 +121,13 @@ export class History {
       })) };
   }
 
-  start(job: { id: string; output: string; provider: string; model: string; imageModel: string; evaluators?: Evaluator[] }) {
+  start(job: { id: string; output: string; provider: string; model: string; imageModel: string; imageProvider?: string; evaluators?: Evaluator[] }) {
     this.db.transaction(() => {
     this.db.query("INSERT INTO jobs(job_id,started_at,status,output_dir,text_provider,text_model,image_model) VALUES (?,?, 'running',?,?,?,?)")
       .run(job.id, new Date().toISOString(), job.output, job.provider, job.model, job.imageModel);
        for (const stage of ["floorplan", "image", "questions", ...(job.evaluators ? [] : ["evaluation"])]) {
         this.db.query("INSERT INTO job_models(job_id,stage,provider,model) VALUES (?,?,?,?)")
-          .run(job.id, stage, stage === "image" ? "openrouter" : job.provider, stage === "image" ? job.imageModel : job.model);
+           .run(job.id, stage, stage === "image" ? job.imageProvider ?? "openrouter" : job.provider, stage === "image" ? job.imageModel : job.model);
        }
        for (const evaluator of job.evaluators ?? []) {
          this.db.query("INSERT INTO evaluations(job_id,evaluator_id,name,provider,model) VALUES (?,?,?,?,?)")

@@ -7,13 +7,16 @@
     "check": "tsc --noEmit",
     "test": "bun test",
     "history": "bun run history.ts",
-    "dashboard": "bun run dashboard.ts"
+    "dashboard": "bun run dashboard.ts",
+    "render": "bun run render.ts"
   },
   "engines": {
     "node": ">=22.14.0"
   },
   "dependencies": {
     "@opencode/sdk": "^2.3.0",
+    "@resvg/resvg-js": "2.6.2",
+    "dejavu-fonts-ttf": "2.37.3",
     "zod": "^4.6.7"
   },
   "devDependencies": {

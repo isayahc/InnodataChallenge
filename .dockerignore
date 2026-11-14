@@ -8,6 +8,7 @@
 !storage.ts
 !history.ts
 !dashboard.ts
+!render.ts
 !dashboard/
 !dashboard/**
 !agents/

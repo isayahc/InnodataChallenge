@@ -21,18 +21,20 @@ export const floorplanSchema = z.object({
     for (const b of plan.rooms.slice(i + 1)) {
       const a = plan.rooms[i]!;
       if (Math.min(a.x + a.width, b.x + b.width) > Math.max(a.x, b.x)
-        && Math.min(a.y + a.height, b.y + b.height) > Math.max(a.y, b.y)) fail("Rooms overlap");
+        && Math.min(a.y + a.height, b.y + b.height) > Math.max(a.y, b.y)) fail(`Rooms ${a.id} and ${b.id} overlap`);
     }
   }
-  if (plan.rooms.reduce((n, r) => n + r.width * r.height, 0) !== plan.width * plan.height) fail("Rooms must tile the footprint");
+  const roomArea = plan.rooms.reduce((n, r) => n + r.width * r.height, 0);
+  if (roomArea !== plan.width * plan.height) fail(`Rooms must tile the footprint: summed room area is ${roomArea}, footprint area is ${plan.width * plan.height}`);
   const seen = new Set<string>();
   for (const door of plan.doors) {
     const a = plan.rooms.find(r => r.id === door.from), b = plan.rooms.find(r => r.id === door.to);
     const id = [door.from, door.to].sort().join(":");
     if (seen.has(id)) fail("Duplicate door");
     seen.add(id);
-    if (!a || !b || a === b || !sharedWall(a, b)) fail("Doors must join two rooms sharing a wall");
+    if (!a || !b || a === b || !sharedWall(a, b)) fail(`Door ${door.from}–${door.to} must join two distinct existing rooms sharing a wall segment, not just a corner`);
   }
+  if (!plan.rooms.length) return; // The array schema already reports the room-count error.
   const reached = new Set([plan.rooms[0]!.id]);
   for (let i = 0; i < plan.rooms.length; i++) for (const d of plan.doors) {
     if (reached.has(d.from)) reached.add(d.to);

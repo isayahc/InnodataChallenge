@@ -2,7 +2,7 @@ import { OpenCode } from "@opencode/sdk";
 import { mkdir, writeFile } from "node:fs/promises";
 import { resolve, join } from "node:path";
 import { generateFloorplan } from "./agents/floorplan";
-import { generateImage } from "./agents/image";
+import { generateImage, RENDERER_ID } from "./agents/image";
 import { generateQuestions } from "./agents/questions";
 import { verifyImage } from "./agents/verify";
 import { History, defaultDatabasePath } from "./storage";
@@ -17,7 +17,7 @@ const output = resolve(process.env.OUTPUT_DIR ?? "outputs", jobId);
 await mkdir(output, { recursive: true });
 const save = (path: string, data: unknown) => writeFile(join(output, path), JSON.stringify(data, null, 2));
 const history = new History();
-history.start({ id: jobId, output, provider, model, imageModel: process.env.IMAGE_MODEL ?? "bytedance-seed/seedream-4.5", evaluators: EVALUATORS });
+history.start({ id: jobId, output, provider, model, imageModel: RENDERER_ID, imageProvider: "local", evaluators: EVALUATORS });
 let host: Awaited<ReturnType<typeof OpenCode.create>> | undefined;
 try {
   if (!["anthropic", "openrouter"].includes(provider)) throw new Error("TEXT_PROVIDER must be anthropic or openrouter");
@@ -28,18 +28,27 @@ try {
   console.log(`Job: ${jobId}\n1. Generating floorplan JSON...`);
   const pastJobs = history.generationContext();
   await save("generation-context.json", pastJobs);
+  const rejected: { attempt: number; reason: string; output: string }[] = [];
   const { plan, attempts } = await selectNovelPlan(
     feedback => generateFloorplan(host!, pastJobs, feedback),
     plan => history.reservePlan(jobId, plan),
+    4,
+    async rejection => {
+      rejected.push(rejection);
+      await save("floorplan-attempts.json", rejected);
+      console.warn(`Floorplan attempt ${rejection.attempt}/4 rejected: ${rejection.reason}`);
+      if (rejection.attempt < 4) console.log("Retrying with corrective feedback...");
+    },
   );
   console.log(`Novel layout selected after ${attempts} proposal(s); compared against ${pastJobs.totalPastLayouts} past layouts.`);
   await save("novelty.json", { attempts, pastLayouts: pastJobs.totalPastLayouts });
   await save("floorplan.json", plan);
-  console.log("2. Generating image...");
+  console.log("2. Rendering deterministic SVG and PNG...");
   const image = await generateImage(plan);
   const imagePath = `floorplan.${image.extension}`;
   await writeFile(join(output, imagePath), image.bytes);
-  await save("generation.json", { model: image.model, prompt: image.prompt, usage: image.usage });
+  await writeFile(join(output, "floorplan.svg"), image.svg);
+  await save("generation.json", image.metadata);
   console.log("3. Generating question set...");
   const questions = await generateQuestions(host, plan, pastJobs);
   await save("questions.json", questions);

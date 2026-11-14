@@ -12,7 +12,7 @@ USER bun
 COPY --chown=bun:bun package.json package-lock.json ./
 RUN bun install --production --frozen-lockfile
 
-COPY --chown=bun:bun index.ts storage.ts history.ts dashboard.ts ./
+COPY --chown=bun:bun index.ts storage.ts history.ts dashboard.ts render.ts ./
 COPY --chown=bun:bun dashboard ./dashboard
 COPY --chown=bun:bun agents ./agents
 ENTRYPOINT ["bun", "run", "index.ts"]

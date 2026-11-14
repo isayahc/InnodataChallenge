@@ -10,8 +10,9 @@ test("dashboard computes weighted totals, serves artifacts, and saves reviews", 
   const history = new History(":memory:");
   try {
     await Bun.write(join(dir, "floorplan.json"), '{"width":8}');
+    await Bun.write(join(dir, "floorplan.svg"), '<svg xmlns="http://www.w3.org/2000/svg"/>');
     for (const id of ["one", "two"]) {
-      history.start({ id, output: dir, provider: "anthropic", model: "saved-text-model", imageModel: "saved-image-model" });
+      history.start({ id, output: dir, provider: "anthropic", model: "saved-text-model", imageModel: "saved-image-model", imageProvider: "local" });
       const questions = Array.from({ length: id === "one" ? 1 : 3 }, (_, i) => ({ id: String(i), question: "Count?", answer: 4, answer_type: "integer" as const }));
       history.addTasks(id, "floorplan.png", questions);
       history.recordAnswers(id, questions.map(q => ({ id: q.id, observed: id === "one" ? 4 : 5, correct: id === "one" })));
@@ -23,11 +24,14 @@ test("dashboard computes weighted totals, serves artifacts, and saves reviews", 
     const overview = await (await get('/api/jobs')).json();
     expect(overview.totals).toMatchObject({ jobs: 2, successes: 1, failures: 3, accuracy: 0.25 });
     const detail = await (await get('/api/jobs/one')).json();
-    expect(detail.models).toContainEqual({ stage: "image", provider: "openrouter", model: "saved-image-model" });
+    expect(detail.models).toContainEqual({ stage: "image", provider: "local", model: "saved-image-model" });
     // Existing runs without stage rows retain their historical saved model IDs.
     history.db.query("DELETE FROM job_models WHERE job_id=?").run("one");
     expect(history.job("one").models[0]!.model).toBe("saved-text-model");
     expect(await (await get('/api/jobs/one/floorplan')).json()).toEqual({ width: 8 });
+    const svg = await get('/api/jobs/one/svg');
+    expect(svg.headers.get('Content-Type')).toBe('image/svg+xml');
+    expect(await svg.text()).toContain('<svg');
     expect((await get('/api/jobs/missing')).status).toBe(404);
     expect((await get('/api/jobs/one/image')).status).toBe(404);
     const review = (origin: string, note: string) => fetch(new Request('http://localhost:3000/api/jobs/two/tasks/0/review', {

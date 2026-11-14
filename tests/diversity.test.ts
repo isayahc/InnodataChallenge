@@ -5,6 +5,7 @@ import { join } from "node:path";
 import { layoutFingerprint, selectNovelPlan } from "../agents/diversity";
 import { floorplanSchema, type Floorplan } from "../agents/schema";
 import { History } from "../storage";
+import { parseOutput, StructuredOutputError } from "../agents/structured-output";
 
 const original: Floorplan = {
   width: 8, height: 6,
@@ -64,4 +65,45 @@ test("duplicate proposals get feedback before selecting a novel plan; retries ar
   let calls = 0;
   await expect(selectNovelPlan(async () => { calls++; return original; }, () => false)).rejects.toThrow("No image was generated");
   expect(calls).toBe(4);
+});
+
+test("invalid geometry is corrected with exact errors and original output before reservation", async () => {
+  const invalid = { ...original, rooms: original.rooms.map(r => r.id === "B" ? { ...r, x: 2 } : r) };
+  const feedback: string[] = [];
+  const rejections: unknown[] = [];
+  let reservations = 0;
+  const result = await selectNovelPlan(async message => {
+    feedback.push(message);
+    return parseOutput(JSON.stringify(feedback.length === 1 ? invalid : original), floorplanSchema);
+  }, () => { reservations++; return true; }, 4, rejection => { rejections.push(rejection); });
+  expect(result.attempts).toBe(2);
+  expect(reservations).toBe(1);
+  expect(rejections).toHaveLength(1);
+  expect(feedback[1]).toContain("Rooms A and B overlap");
+  expect(feedback[1]).toContain(JSON.stringify(invalid));
+});
+
+test("malformed JSON and duplicates share a bounded proposal budget", async () => {
+  let calls = 0;
+  const result = await selectNovelPlan(async message => {
+    calls++;
+    if (calls === 1) return parseOutput("{bad json", floorplanSchema);
+    if (calls === 2) { expect(message).toContain("failed validation"); return original; }
+    expect(message).toContain("duplicates a historical layout");
+    return novel;
+  }, plan => layoutFingerprint(plan) !== layoutFingerprint(original));
+  expect(result.attempts).toBe(3);
+  let invalidCalls = 0;
+  await expect(selectNovelPlan(async () => {
+    invalidCalls++;
+    return parseOutput('{"rooms":[]}', floorplanSchema);
+  }, () => { throw new Error("Should not reserve invalid JSON"); })).rejects.toThrow("after 4 proposals");
+  expect(invalidCalls).toBe(4);
+});
+
+test("provider errors are not treated as layout validation failures", async () => {
+  let calls = 0;
+  await expect(selectNovelPlan(async () => { calls++; throw new Error("HTTP 401"); }, () => true)).rejects.toThrow("HTTP 401");
+  expect(calls).toBe(1);
+  expect(() => parseOutput(JSON.stringify({ ...original, rooms: [] }), floorplanSchema)).toThrow(StructuredOutputError);
 });

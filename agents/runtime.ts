@@ -1,6 +1,7 @@
 import { OpenCode } from "@opencode/sdk";
 import { z } from "zod";
 import type { Evaluator } from "./evaluators";
+import { parseOutput } from "./structured-output";
 
 export type Host = Awaited<ReturnType<typeof OpenCode.create>>;
 export async function ask<T>(host: Host, role: string, prompt: string, schema: z.ZodType<T>, image?: string, evaluator?: Evaluator): Promise<T> {
@@ -26,7 +27,7 @@ export async function ask<T>(host: Host, role: string, prompt: string, schema: z
     const messages = await host.sessions.context({ sessionID: session.id }, options);
     const text = messages.filter(m => m.type === "assistant").flatMap(m => m.content)
       .filter(p => p.type === "text").map(p => p.text).join("\n").trim();
-    return schema.parse(JSON.parse(text.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "")));
+    return parseOutput(text, schema);
   } finally {
     // Each task uses an independent session; the verifier cannot see other agents' messages.
     await host.sessions.remove({ sessionID: session.id });
