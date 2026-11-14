@@ -3,15 +3,22 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "bun run index.js"
+    "start": "bun run index.ts",
+    "check": "tsc --noEmit",
+    "test": "bun test",
+    "history": "bun run history.ts",
+    "dashboard": "bun run dashboard.ts"
   },
   "engines": {
     "node": ">=22.14.0"
   },
   "dependencies": {
-    "@opencode/sdk": "^2.3.0"
+    "@opencode/sdk": "^2.3.0",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
-    "bun": "^1.4.4"
+    "@types/bun": "^1.4.4",
+    "bun": "^1.4.4",
+    "typescript": "^5.9.3"
   }
 }

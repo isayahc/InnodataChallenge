@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug floorplan pipeline",
+      "type": "bun",
+      "request": "launch",
+      "runtime": "${workspaceFolder}/node_modules/bun/bin/bun",
+      "windows": {
+        "runtime": "${workspaceFolder}/node_modules/bun/bin/bun.exe"
+      },
+      "program": "${workspaceFolder}/index.ts",
+      "cwd": "${workspaceFolder}",
+      "stopOnEntry": true,
+      "watchMode": false
+    }
+  ]
+}

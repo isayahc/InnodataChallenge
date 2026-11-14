@@ -4,4 +4,11 @@
 !.dockerignore
 !package.json
 !package-lock.json
-!index.js
+!index.ts
+!storage.ts
+!history.ts
+!dashboard.ts
+!dashboard/
+!dashboard/**
+!agents/
+!agents/**
