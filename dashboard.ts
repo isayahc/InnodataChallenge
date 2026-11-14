@@ -20,7 +20,8 @@ export function dashboardHandler(history: History) {
     const json = (data: unknown, status = 200) => Response.json(data, { status, headers: { "Cache-Control": "no-store" } });
     try {
       if (request.method === "GET") {
-        if (url.pathname === "/api/jobs") return json({ totals: history.cumulative(), jobs: history.metrics() });
+        if (url.pathname === "/api/jobs") return json({ totals: history.cumulative(), modelMetrics: history.modelMetrics(),
+          jobs: history.metrics().map(j => ({ ...j, modelMetrics: history.modelMetrics(j.job_id) })) });
         const detail = url.pathname.match(/^\/api\/jobs\/([^/]+)(?:\/(image|floorplan))?$/);
         if (detail) {
           const id = decodeURIComponent(detail[1]!);

@@ -4,14 +4,18 @@ A floorplan task generator and model evaluation pipeline coordinated by `index.t
 
 ## Agents
 
-- `agents/floorplan.ts`: OpenCode SDK agent generates a validated four-room JSON layout.
+- `agents/floorplan.ts`: OpenCode SDK agent generates a validated 3–6-room JSON layout
+  using summaries of previous jobs to vary room sizes, partitions, and door connections.
 - `agents/image.ts`: generates an image from the JSON through OpenRouter's Image API.
 - `agents/questions.ts`: OpenCode SDK agent organizes questions whose wording and expected
   answers are derived deterministically from JSON, avoiding invented ground truth.
-- `agents/verify.ts`: a fresh OpenCode SDK session answers questions from the image without
-  seeing expected answers. Code compares the responses against the ground truth.
+- `agents/verify.ts`: two independent OpenCode SDK sessions answer the same questions from
+  the same image, one with Claude Opus 5.5 and one with GPT-6 Luna. Neither sees expected
+  answers or the other model's responses. Code compares each response against ground truth.
+- `agents/evaluators.ts`: the explicit evaluation model IDs; `agents/evaluate-all.ts` runs
+  both and isolates errors so one provider failure cannot erase the other model's results.
 
-Each run generates one image and evaluates its questions once. Wrong answers are retained,
+Each run generates one image and evaluates its questions once per model. Wrong answers are retained,
 not retried away. Every run has a job ID and a persisted result object. Model mistakes do
 not fail the process; operational errors exit with code 1 and are recorded separately.
 
@@ -28,21 +32,49 @@ Put your Anthropic and OpenRouter API keys in `.env`, then run:
 npm start
 ```
 
-Text and vision agents use Anthropic's Claude Haiku 4.5 by default. Image generation uses
+Floorplan and question agents use Anthropic's Claude Haiku 4.5 by default. Image generation uses
 `bytedance-seed/seedream-4.5` through OpenRouter. Set `TEXT_PROVIDER=openrouter` in `.env`
 for OpenRouter-only operation; then only the OpenRouter key is required.
+
+Image evaluation always runs **both** models through OpenRouter:
+
+| Evaluation | Provider | Exact model ID |
+| --- | --- | --- |
+| Claude Opus 5.5 | OpenRouter | `anthropic/claude-opus-5.5` |
+| GPT-6 Luna | OpenRouter | `openai/gpt-6-luna` |
+
+`TEXT_PROVIDER` and `TEXT_MODEL` only affect generation/question agents, not evaluation.
+Both evaluation sessions start independently with identical image/question inputs.
 
 | Setting | Default | Purpose |
 | --- | --- | --- |
 | `TEXT_PROVIDER` | `anthropic` | `anthropic` or `openrouter` |
-| `TEXT_MODEL` | Claude Haiku 4.5 | Provider-specific model ID; must accept images |
+| `TEXT_MODEL` | Claude Haiku 4.5 | Generation/question-agent model ID |
 | `IMAGE_MODEL` | `bytedance-seed/seedream-4.5` | OpenRouter Image API model |
 | `OUTPUT_DIR` | `outputs` | Parent directory for job outputs |
 | `DATABASE_PATH` | `OUTPUT_DIR/history.sqlite` | Persistent SQLite history |
 
-Requests use provider credits. Each run generates one image and evaluates it once.
+Requests use provider credits. Each run generates one image and makes two separate model evaluations.
 The script runs with project-local Bun (installed by npm) and automatically loads `.env`.
 Keep `.env` private; it is ignored by Git.
+
+## Generation history and duplicate prevention
+
+Floorplan and question agents receive a compact summary of the 12 most recent saved layouts:
+room geometry, door connections, question categories, and reviewed per-model metrics.
+The exact summary supplied is saved in `generation-context.json`. Opus and Luna receive
+only the current image/questions, never this history or expected answers.
+
+Before image generation, a canonical fingerprint checks **all** stored layouts, not just
+the recent prompt summaries. Room IDs, names, array order, door direction, normalized scaling,
+rotations, and reflections do not make a layout new. Room geometry/proportions or door
+connectivity must differ. A unique SQLite constraint prevents concurrent duplicate reservations.
+This is structural duplicate detection, not a guarantee that every task is semantically novel.
+
+A duplicate proposal gets corrective feedback, up to four proposals total. Exhaustion stops
+the job before image generation. Reserved plans stay in history even if a later API call fails.
+Question wording/answers remain deterministically derived from JSON; history influences
+their organization rather than inventing unverifiable answers. A fresh database starts empty.
 
 ## Outputs
 
@@ -51,14 +83,17 @@ outputs/
   history.sqlite
   <job-id>/
     floorplan.json
+    generation-context.json
+    novelty.json       # Proposal attempts and historical layout count
     questions.json
     floorplan.jpg       # Extension follows the actual image format
     generation.json    # Image model, prompt, reported usage
-    verification.json  # Raw answer comparisons, not validity judgments
-    result.json        # Job metrics and individual task outcomes
+    verification.json  # Separate Opus/Luna comparisons or errors
+    result.json        # Per-model metrics; each task has an answers array
 ```
 
-Errors are recorded in SQLite and `error.json`. This version checks room/door counts,
+Evaluation errors are recorded per model in SQLite and `verification.json`; other pipeline
+errors also produce `error.json`. This version checks room/door counts,
 labelled dimensions, and direct door connectivity. It does not certify pixel-accurate geometry.
 
 ## Validity and historical metrics
@@ -77,7 +112,9 @@ to decide validity. An incorrect drawing can invalidate one question without inv
 A model explicitly answering `null` (unreadable/abstained) is a completed but incorrect
 answer on a valid task. An omitted response is an error. `matchesExpected` records the raw
 JSON comparison independently of validity. Accuracy is successes / (successes + model failures),
-or `null` when nothing is eligible. Job errors are retained even if no tasks were generated.
+or `null` when nothing is eligible. This is computed separately per model. A shared validity
+review excludes an invalid task from both models' scores; an API error affects only its model.
+Unique task counts are not doubled. Job errors are retained even if no tasks were generated.
 
 ```sh
 npm run history -- metrics
@@ -90,7 +127,9 @@ npm run history -- review <job-id> L_B_door invalid "Image omits the door specif
 Use actual IDs from `show`. Reviews are per task and require a note. They update live SQLite
 metrics and the job's `result.json`; every review is retained in the `reviews` audit table.
 You can reset a task to `unreviewed` with the same command. SQLite contains `jobs`, `tasks`,
-`reviews`, and the `job_metrics` view. Keep the database and its WAL files together while running.
+`reviews`, `evaluations`, `evaluation_answers`, `generated_plans`, and the `job_metrics` / `answer_rows` views.
+Legacy single-model records remain visible under their original model, never relabeled as Opus/Luna.
+Keep the database and its WAL files together while running.
 Old pre-SQLite output folders are not automatically imported.
 
 ## Dashboard
@@ -101,8 +140,10 @@ npm run dashboard
 
 Open **http://127.0.0.1:3000**. There are two pages:
 
-- `/`: cumulative metrics and individual runs, newest first. Click a job ID to open it.
-- `/jobs/<job-id>`: image, floorplan JSON, saved provider/model IDs per stage, and task results.
+- `/`: unique task/job counts, cumulative metrics per evaluation model, and individual runs
+  with separate Opus/Luna accuracy. Click a job ID to open it.
+- `/jobs/<job-id>`: image, JSON, models per stage, per-model metrics, and side-by-side answers.
+  On mobile the task table becomes cards with stacked model results.
 
 Expand **Review validity** on a task, select its validity, enter a note, and save. The job's
 metrics and cumulative totals update in SQLite immediately. Use **Refresh data** to load new jobs.

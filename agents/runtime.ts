@@ -1,16 +1,17 @@
 import { OpenCode } from "@opencode/sdk";
 import { z } from "zod";
+import type { Evaluator } from "./evaluators";
 
 export type Host = Awaited<ReturnType<typeof OpenCode.create>>;
-export async function ask<T>(host: Host, role: string, prompt: string, schema: z.ZodType<T>, image?: string): Promise<T> {
-  const providerID = process.env.TEXT_PROVIDER ?? "anthropic";
+export async function ask<T>(host: Host, role: string, prompt: string, schema: z.ZodType<T>, image?: string, evaluator?: Evaluator): Promise<T> {
+  const providerID = evaluator?.provider ?? process.env.TEXT_PROVIDER ?? "anthropic";
   if (!["anthropic", "openrouter"].includes(providerID)) throw new Error("TEXT_PROVIDER must be anthropic or openrouter");
   const session = await host.sessions.create({
     title: role,
     location: { directory: process.cwd() },
     model: {
       providerID,
-      id: process.env.TEXT_MODEL ?? (providerID === "anthropic" ? "claude-haiku-4-5" : "anthropic/claude-haiku-4.5"),
+      id: evaluator?.model ?? process.env.TEXT_MODEL ?? (providerID === "anthropic" ? "claude-haiku-4-5" : "anthropic/claude-haiku-4.5"),
     },
     permissions: [{ action: "*", resource: "*", effect: "deny" }],
   });
