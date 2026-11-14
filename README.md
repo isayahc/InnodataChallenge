@@ -2,6 +2,59 @@
 
 A floorplan task generator and model evaluation pipeline coordinated by `index.ts`, with SQLite job history.
 
+## Quick start
+
+### 1. Install and configure
+
+You need Git and Node.js/npm (Node.js 22 or newer). `npm install` installs the project-local
+Bun runtime used to run the application; no separate Bun or OpenCode CLI installation is required.
+Docker is optional.
+
+```sh
+git clone https://github.com/isayahc/InnodataChallenge.git
+cd InnodataChallenge
+npm install
+```
+
+Create your local environment file once:
+
+```powershell
+# Windows PowerShell
+Copy-Item example.env .env
+```
+
+On macOS/Linux, use `cp example.env .env` instead. Edit `.env` and add your Anthropic and
+OpenRouter keys. OpenRouter is required for image generation and both evaluation models.
+For OpenRouter-only operation, set `TEXT_PROVIDER=openrouter`; the Anthropic key is then optional.
+
+### 2. Run the main job
+
+From the repository directory:
+
+```sh
+npm start
+```
+
+This runs `index.ts` once: generate a novel floorplan JSON, generate its image, create questions,
+and evaluate the same tasks independently with Opus 5.5 and GPT-6 Luna. It prints the job ID
+and saves artifacts under `outputs/<job-id>/` and history in `outputs/history.sqlite`.
+Run the command again to create another job. Model calls consume provider credits.
+
+### 3. Run the dashboard
+
+Open a **second terminal** in the same repository directory:
+
+```sh
+npm run dashboard
+```
+
+Visit **http://127.0.0.1:3000**. Leave this command running while using the dashboard;
+press **Ctrl+C** to stop it. The dashboard can run alongside jobs and does not generate tasks itself.
+Click **Refresh data** after a job finishes, then click its job ID to view its image, JSON,
+model answers, and reviews. Mark task validity before expecting scored accuracy.
+
+For container commands, see [Run in Docker](#run-in-docker).
+
 ## Agents
 
 - `agents/floorplan.ts`: OpenCode SDK agent generates a validated 3–6-room JSON layout
@@ -19,18 +72,7 @@ Each run generates one image and evaluates its questions once per model. Wrong a
 not retried away. Every run has a job ID and a persisted result object. Model mistakes do
 not fail the process; operational errors exit with code 1 and are recorded separately.
 
-## Run
-
-```powershell
-npm install
-Copy-Item example.env .env
-```
-
-Put your Anthropic and OpenRouter API keys in `.env`, then run:
-
-```powershell
-npm start
-```
+## Configuration
 
 Floorplan and question agents use Anthropic's Claude Haiku 4.5 by default. Image generation uses
 `bytedance-seed/seedream-4.5` through OpenRouter. Set `TEXT_PROVIDER=openrouter` in `.env`
